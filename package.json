@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
-  "keywords": [],
+  "keywords": ["eslint", "config", "parcellab"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcelLab/eslint-config-parcellab.git"
+  },
   "peerDependencies": {
     "eslint": ">= 3"
   },
