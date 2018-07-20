@@ -1,0 +1,13 @@
+{
+  "name": "eslint-config-parcellab",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "peerDependencies": {
+    "eslint": ">= 3"
+  },
+  "author": "",
+  "license": "MIT"
+}
