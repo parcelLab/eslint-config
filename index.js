@@ -32,7 +32,7 @@ module.exports = {
         "objects": "always-multiline",
         "imports": "always-multiline",
         "exports": "always-multiline",
-        "functions": "always-multiline"
+        "functions": "ignore"
       }
     ],
     "keyword-spacing": [
@@ -111,13 +111,7 @@ module.exports = {
     ],
     "no-spaced-func": "error",
     "no-tabs": "error",
-    "no-trailing-spaces": [
-      "error",
-      {
-        "skipBlankLines": false,
-        "ignoreComments": false
-      }
-    ],
+    "no-trailing-spaces": 0,
     "no-whitespace-before-property": "error",
     "object-curly-spacing": [
       "error",
