@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
-  "keywords": ["eslint", "config", "parcellab"],
+  "scripts": {
+    "test": "npm run test:default",
+    "test:default": "eslint test/fixtures/hello-world.js --config index.js --no-ignore"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "parcellab"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/parcelLab/eslint-config-parcellab.git"
@@ -13,5 +20,8 @@
     "eslint": ">= 3"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4"
+  }
 }
