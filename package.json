@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:default",
-    "test:default": "eslint test/fixtures/hello-world.js --config index.js --no-ignore"
+    "test": "npm run test:default && npm run test:react-typescript",
+    "test:default": "eslint test/fixtures/hello-world.js --config index.js --no-ignore",
+    "test:react-typescript": "eslint test/fixtures/hello-world.tsx --config react-typescript.js --no-ignore"
   },
   "keywords": [
     "eslint",
@@ -22,6 +23,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "eslint-config-airbnb": "^19.0.4"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0"
   }
 }
