@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test:default && npm run test:react-typescript",
     "test:default": "eslint test/fixtures/sample-file.js --config index.js --no-ignore",
-    "test:react-typescript": "eslint test/fixtures/sample-file.tsx --config react-typescript.js --no-ignore"
+    "test:react-typescript": "eslint test/fixtures/sample-file.ts --config react-typescript.js --no-ignore"
   },
   "keywords": [
     "eslint",
