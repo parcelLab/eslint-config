@@ -1,7 +1,8 @@
 module.exports = {
   extends: './index.js',
+  ignorePatterns: ['.eslintrc.js'],
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
   rules: {
     '@typescript-eslint/no-unsafe-call': 'off',

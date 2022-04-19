@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/naming-convention */
 module.exports = {
   extends: [
     'plugin:eslint-comments/recommended',

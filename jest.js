@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/naming-convention */
 // TypeScript rules with jest support
 module.exports = {
   extends: ['plugin:jest/recommended', require.resolve('./base.js')],
