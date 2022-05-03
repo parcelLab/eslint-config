@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
-    './javascript.js',
-    './jest.js',
-    './react.js',
-    './typescript.js',
+    './src/javascript.js',
+    './src/jest.js',
+    './src/react.js',
+    './src/typescript.js',
   ].map(require.resolve),
 };
