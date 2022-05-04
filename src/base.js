@@ -5,9 +5,11 @@ module.exports = {
   },
   plugins: ['unicorn', 'promise'],
   extends: [
-    'airbnb',
     'plugin:unicorn/recommended',
     'plugin:promise/recommended',
+    'airbnb',
   ],
-  rules: {},
+  rules: {
+    'unicorn/no-array-for-each': 'off',
+  },
 };

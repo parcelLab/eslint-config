@@ -3,5 +3,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.eslint.json',
   },
-  rules: {},
+  rules: {
+    'unicorn/prefer-module': 'off',
+  },
 };

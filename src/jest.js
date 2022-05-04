@@ -1,4 +1,3 @@
-// TypeScript rules with jest support
 module.exports = {
   env: {
     jest: true,
