@@ -8,6 +8,7 @@ module.exports = {
     'plugin:unicorn/recommended',
     'plugin:promise/recommended',
     'airbnb',
+    'prettier',
   ],
   rules: {
     'unicorn/no-array-for-each': 'off',
