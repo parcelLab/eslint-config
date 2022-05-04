@@ -16,7 +16,7 @@ describe('Validate ESLint configs', () => {
     ['typescript.js', 'test/fixtures/tsfile.ts'],
   ].forEach(([configFile, lintFile]) => {
     it(`load config ${configFile} in ESLint to validate ${lintFile}`, async () => {
-      const results = await getErrors(`src/${configFile}`, [lintFile]);
+      const results = await getErrors(configFile, [lintFile]);
       expect(results[0].messages).toEqual([]);
     });
   });
