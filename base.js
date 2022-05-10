@@ -5,9 +5,9 @@ module.exports = {
   },
   plugins: ['unicorn', 'promise'],
   extends: [
-    'plugin:unicorn/recommended',
-    'plugin:promise/recommended',
     'airbnb',
+    'plugin:promise/recommended',
+    'plugin:unicorn/recommended',
     'prettier',
   ],
   rules: {

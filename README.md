@@ -21,10 +21,10 @@ Therefore, these lint rules will be compatible with your prettier workflow, and 
 In addition, the following `recommended` rules can be enabled on demand. By default, when extending from `parcellab` directly, all will be enabled.
 But you can choose by topic:
 
-  - Javascript: `parcellab/javascript`;
-  - Typescript: `parcellab/typescript`;
-  - React: `parcellab/react`;
-  - Jest: `parcellab/jest`;
+- Javascript: `parcellab/javascript`;
+- Typescript: `parcellab/typescript`;
+- React: `parcellab/react`;
+- Jest: `parcellab/jest`;
 
 ## Configuration
 
@@ -46,19 +46,125 @@ npm install eslint-config-parcellab --save-dev
 yarn add eslint-config-parcellab --save
 ```
 
-#### All rules
+### 3. Install required ESLint Plugins
+
+All configurations inherit from some base rules. Therefore these plugins are always required.
+
+```sh
+# npm
+npm install eslint-plugin-import \
+            eslint-plugin-promise \
+            eslint-plugin-unicorn \
+            --save-dev
+# yarn
+yarn add eslint-plugin-import \
+         eslint-plugin-promise \
+         eslint-plugin-unicorn \
+         --dev
+```
+
+All possible plugins are defined in `package.json` as peer dependencies.
+
+#### Jest
+
+To use Jest rules, the following plugins are required:
+
+```sh
+# npm
+npm install eslint-plugin-jest \
+            --save-dev
+# yarn
+yarn add eslint-plugin-jest \
+         --dev
+```
+
+#### React
+
+To use React rules, the following plugins are required:
+
+```sh
+# npm
+npm install eslint-plugin-jsx-a11y \
+            eslint-plugin-react \
+            eslint-plugin-react-hooks \
+            --save-dev
+# yarn
+yarn add eslint-plugin-jsx-a11y \
+         eslint-plugin-react \
+         eslint-plugin-react-hooks \
+         --dev
+```
+
+#### TypeScript
+
+To use TypeScript rules, the following plugins are required:
+
+```sh
+# npm
+npm install @typescript-eslint/eslint-plugin \
+            --save-dev
+# yarn
+yarn add @typescript-eslint/eslint-plugin \
+         --dev
+```
+
+#### All
+
+If you just want to use all the rules (ideally for a monorepo setup):
+
+```sh
+# npm
+npm install eslint-plugin-import \
+            eslint-plugin-promise \
+            eslint-plugin-jest \
+            eslint-plugin-jsx-a11y \
+            eslint-plugin-react \
+            eslint-plugin-react-hooks \
+            @typescript-eslint/eslint-plugin \
+            --save-dev
+# yarn
+yarn add eslint-plugin-import \
+         eslint-plugin-promise \
+         eslint-plugin-jest \
+         eslint-plugin-jsx-a11y \
+         eslint-plugin-react \
+         eslint-plugin-react-hooks \
+         @typescript-eslint/eslint-plugin \
+         --dev
+```
+
+### 4. Configure ESLint
+
+Configure your ESLint config file to load all rules. All previously defined plugins have to be installed.
 
 ```js
 // .eslintrc.js
 module.exports = {
   extends: ['parcellab'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+};
+```
+
+In a monorepo setup, `tsconfigRootDir` can be used, which allows loading different `tsconfig.json` files.
+It will always use the TypeScript configuration of the given root folder to be linted.
+
+```js
+module.exports = {
+  extends: ['kirinus'],
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+  },
 };
 ```
 
 #### Rule by file types
 
-You can choose only a single set of rules instead of all the recomended ones.
-To do it, just extend only the desired one.
+You can choose only a single set of rules instead of all the recommended ones.
+
+To do it, just extend only the desired one. See the [install plugins](#3-install-required-eslint-plugins) section to know which plugins are required per scope.
 
 Examples:
 
@@ -70,9 +176,12 @@ module.exports = {
   extends: ['parcellab/javascript'],
 };
 
-// for .ts files
+// for .ts files (do not forget to add `parseOptions` pointing to the tsconfig file)
 module.exports = {
   extends: ['parcellab/typescript'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 };
 
 // for .jsx files
@@ -88,11 +197,14 @@ module.exports = {
 // You can combine multiple extends, like this:
 // for .tsx files
 module.exports = {
-  extends: ['parcellab/react', 'parcellab/typescript']
+  extends: ['parcellab/react', 'parcellab/typescript'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 };
 ```
 
-### 4. Run ESLint
+### 5. Run ESLint
 
 Run the following script:
 

@@ -3,8 +3,5 @@ module.exports = {
     browser: true,
   },
   plugins: ['react'],
-  extends: [
-    require.resolve('./base.js'),
-    'airbnb/hooks',
-  ],
+  extends: ['airbnb/hooks', require.resolve('./base.js')],
 };
