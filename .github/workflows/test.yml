@@ -41,6 +41,4 @@ jobs:
       with:
         draft: false
         token: ${{ github.token }}
-        app: ${{ env.PACKAGE }}
         pushTag: true
-        templatePath: release-wizard/library.md
