@@ -5,25 +5,26 @@ Specific parcelLab configuration for JavaScript and TypeScript projects.
 It applies the `recommended` rules from:
 
 - All files (`.js, .jsx, .ts, .tsx`)
-	- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
-	- [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)
-	- [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
-	- [eslint-config-airbnb](https://github.com/airbnb/javascript)
-	- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+  - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+  - [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)
+  - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
+  - [eslint-config-airbnb](https://github.com/airbnb/javascript)
+  - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 - Typescript files, extra rules (`*.ts, *.tsx`)
-	- [eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
-	- [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)
+  - [eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+  - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)
 - Test files, extra rules (`*.test.*, *.spec.*`)
-	- [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+  - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 
 Therefore, these lint rules will be compatible with your prettier workflow, and won't collide when running prettier commands.
 
 In addition, the following `recommended` rules can be enabled on demand. By default, when extending from `parcellab` directly, all will be enabled.
 But you can choose by topic:
-	- Javascript: `parcellab/javascript`;
-	- Typescript: `parcellab/typescript`;
-	- React: `parcellab/react`;
-	- Jest: `parcellab/jest`;
+
+  - Javascript: `parcellab/javascript`;
+  - Typescript: `parcellab/typescript`;
+  - React: `parcellab/react`;
+  - Jest: `parcellab/jest`;
 
 ## Configuration
 
@@ -46,17 +47,21 @@ yarn add eslint-config-parcellab --save
 ```
 
 #### All rules
+
 ```js
 // .eslintrc.js
 module.exports = {
   extends: ['parcellab'],
 };
 ```
+
 #### Rule by file types
+
 You can choose only a single set of rules instead of all the recomended ones.
 To do it, just extend only the desired one.
 
 Examples:
+
 ```js
 // .eslintrc.js
 
@@ -126,4 +131,18 @@ parserOptions: {
 -  project: './tsconfig.json',
 +  project: './tsconfig.eslint.json',
 }
+```
+
+## Development
+
+Lint the lint rules
+
+```sh
+yarn lint
+```
+
+Run the tests
+
+```sh
+yarn test
 ```
