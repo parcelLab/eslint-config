@@ -4,5 +4,5 @@ module.exports = {
     './jest.js',
     './react.js',
     './typescript.js',
-  ].map(require.resolve),
+  ].map((path) => require.resolve(path)),
 };

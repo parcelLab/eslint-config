@@ -4,34 +4,27 @@ Specific parcelLab configuration for JavaScript and TypeScript projects.
 
 It applies the `recommended` rules from:
 
-- [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
-- [eslint-plugin-eslint-comments](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
-- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
-- [eslint-plugin-ordered-imports](https://www.npmjs.com/package/eslint-plugin-ordered-imports)
-- [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)
-- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
-
-Therefore, these lint rules will be compatible with your prettier workflow, and won't collide when
-running prettier commands.
-
-In addition, the following `recommended` rules can be enabled on demand. By default, when extending
-from `parcellab` directly, all will be enabled.
-
-- JavaScript
-  - [eslint](https://www.npmjs.com/package/eslint)
-- Jest
-  - [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
-- React
-  - [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+- All files (`.js, .jsx, .ts, .tsx`)
+  - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+  - [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)
+  - [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
+  - [eslint-config-airbnb](https://github.com/airbnb/javascript)
   - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
-  - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
-- TypeScript
-  - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
-    - `typescript`
-  - [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
-    - `eslint-recommended`
-    - `recommended`
-    - `recommended-requiring-type-checking`
+- Typescript files, extra rules (`*.ts, *.tsx`)
+  - [eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+  - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)
+- Test files, extra rules (`*.test.*, *.spec.*`)
+  - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
+
+Therefore, these lint rules will be compatible with your prettier workflow, and won't collide when running prettier commands.
+
+In addition, the following `recommended` rules can be enabled on demand. By default, when extending from `parcellab` directly, all will be enabled.
+But you can choose by topic:
+
+- Javascript: `parcellab/javascript`;
+- Typescript: `parcellab/typescript`;
+- React: `parcellab/react`;
+- Jest: `parcellab/jest`;
 
 ## Configuration
 
@@ -53,55 +46,28 @@ npm install eslint-config-parcellab --save-dev
 yarn add eslint-config-parcellab --save
 ```
 
-### 3. Install required ESLint Plugins and configure
+### 3. Install required ESLint Plugins
 
 All configurations inherit from some base rules. Therefore these plugins are always required.
 
 ```sh
 # npm
-npm install eslint-plugin-eslint-comments \
-            eslint-plugin-import \
-            eslint-plugin-node \
-            eslint-plugin-ordered-imports \
+npm install eslint-plugin-import \
             eslint-plugin-promise \
             eslint-plugin-unicorn \
             --save-dev
 # yarn
-yarn add eslint-plugin-eslint-comments \
-         eslint-plugin-import \
-         eslint-plugin-node \
-         eslint-plugin-ordered-imports \
+yarn add eslint-plugin-import \
          eslint-plugin-promise \
          eslint-plugin-unicorn \
          --dev
 ```
 
-#### JavaScript
-
-Lints `.js` files.
-
-To add this configuration:
-
-```js
-module.exports = {
-  extends: ['parcellab/javascript'],
-};
-```
+All possible plugins are defined in `package.json` as peer dependencies.
 
 #### Jest
 
-Lints JavaScript/TypeScript test files with the following globs.
-
-```js
-[
-  '**/__tests__/*.{j,t}s?(x)',
-  '**/test/**/*.{j,t}s?(x)',
-  '**/*.spec.{j,t}s?(x)',
-  '**/*.test.{j,t}s?(x)',
-];
-```
-
-It requires the following additional plugin:
+To use Jest rules, the following plugins are required:
 
 ```sh
 # npm
@@ -112,19 +78,9 @@ yarn add eslint-plugin-jest \
          --dev
 ```
 
-To add this configuration:
-
-```js
-module.exports = {
-  extends: ['parcellab/jest'],
-};
-```
-
 #### React
 
-Lints `.tsx` and `.jsx` React files that are no tests.
-
-It requires the following additional plugins:
+To use React rules, the following plugins are required:
 
 ```sh
 # npm
@@ -139,19 +95,9 @@ yarn add eslint-plugin-jsx-a11y \
          --dev
 ```
 
-To add this configuration:
-
-```js
-module.exports = {
-  extends: ['parcellab/react'],
-};
-```
-
 #### TypeScript
 
-Lints `.ts` and `.tsx` Files.
-
-It requires the following additional plugin:
+To use TypeScript rules, the following plugins are required:
 
 ```sh
 # npm
@@ -162,31 +108,13 @@ yarn add @typescript-eslint/eslint-plugin \
          --dev
 ```
 
-To add this configuration, you need to define your TypeScript config.
-
-In your ESLint config, set [parserOptions.project](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser#parseroptionsproject) to the path of your tsconfig.json.
-
-For example:
-
-```js
- module.exports = {
-   extends: ['parcellab/typescript'],
-+  parserOptions: {
-+    project: './tsconfig.json',
-+ }
- };
-```
-
 #### All
 
 If you just want to use all the rules (ideally for a monorepo setup):
 
 ```sh
 # npm
-npm install eslint-plugin-eslint-comments \
-            eslint-plugin-import \
-            eslint-plugin-node \
-            eslint-plugin-ordered-imports \
+npm install eslint-plugin-import \
             eslint-plugin-promise \
             eslint-plugin-jest \
             eslint-plugin-jsx-a11y \
@@ -195,10 +123,7 @@ npm install eslint-plugin-eslint-comments \
             @typescript-eslint/eslint-plugin \
             --save-dev
 # yarn
-yarn add eslint-plugin-eslint-comments \
-         eslint-plugin-import \
-         eslint-plugin-node \
-         eslint-plugin-ordered-imports \
+yarn add eslint-plugin-import \
          eslint-plugin-promise \
          eslint-plugin-jest \
          eslint-plugin-jsx-a11y \
@@ -208,11 +133,26 @@ yarn add eslint-plugin-eslint-comments \
          --dev
 ```
 
-and
+### 4. Configure ESLint
+
+Configure your ESLint config file to load all rules. All previously defined plugins have to be installed.
+
+```js
+// .eslintrc.js
+module.exports = {
+  extends: ['parcellab'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+};
+```
+
+In a monorepo setup, `tsconfigRootDir` can be used, which allows loading different `tsconfig.json` files.
+It will always use the TypeScript configuration of the given root folder to be linted.
 
 ```js
 module.exports = {
-  extends: ['parcellab'],
+  extends: ['kirinus'],
   parserOptions: {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
@@ -220,10 +160,51 @@ module.exports = {
 };
 ```
 
-The `tsconfigRootDir` is useful when you want to load different `tsconfig.json` files.
-It will always use the TypeScript configuration of the package to be linted.
+#### Rule by file types
 
-### 4. Run ESLint
+You can choose only a single set of rules instead of all the recommended ones.
+
+To do it, just extend only the desired one. See the [install plugins](#3-install-required-eslint-plugins) section to know which plugins are required per scope.
+
+Examples:
+
+```js
+// .eslintrc.js
+
+// for .js files
+module.exports = {
+  extends: ['parcellab/javascript'],
+};
+
+// for .ts files (do not forget to add `parseOptions` pointing to the tsconfig file)
+module.exports = {
+  extends: ['parcellab/typescript'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+};
+
+// for .jsx files
+module.exports = {
+  extends: ['parcellab/react'],
+};
+
+// for test files
+module.exports = {
+  extends: ['parcellab/jest'],
+};
+
+// You can combine multiple extends, like this:
+// for .tsx files
+module.exports = {
+  extends: ['parcellab/react', 'parcellab/typescript'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+};
+```
+
+### 5. Run ESLint
 
 Run the following script:
 
@@ -257,8 +238,23 @@ A common fix is to create a `tsconfig.eslint.json` file, which extends your `tsc
 Update your ESLint config file:
 
 ```js
+// .eslintrc.js
 parserOptions: {
 -  project: './tsconfig.json',
 +  project: './tsconfig.eslint.json',
 }
+```
+
+## Development
+
+Lint the lint rules
+
+```sh
+yarn lint
+```
+
+Run the tests
+
+```sh
+yarn test
 ```
