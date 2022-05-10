@@ -41,6 +41,23 @@ jobs:
           VERSION=${CLEAN_TAG//v}
         fi
         echo "::set-output name=version::$VERSION"
+    - name: Update package.json version to ${{ steps.load_version.outputs.version }}
+      uses: mikefarah/yq@v4.9.0
+      with:
+        cmd: |
+          yq e '.version = "${{ steps.load_version.outputs.version }}"' -i package.json -j
+    # # Publishing bypassing the main branch check requires a bot token
+    # - name: Commit new package.json version
+    #   run: |
+    #     git config --global user.email "${{ env.BOT_EMAIL }}"
+    #     git config --global user.name "${{ env.BOT_NAME }}"
+    #     git add package.json
+    #     git commit -m "chore: set package.json version ${{ steps.load_version.outputs.version }}"
+    # - name: Push changes to current git repository
+    #   uses: ad-m/github-push-action@v0.6.0
+    #   with:
+    #     github_token: ${{ github.token }}
+    #     branch: main
     - name: Publish NPM package
       uses: JS-DevTools/npm-publish@v1
       with:
