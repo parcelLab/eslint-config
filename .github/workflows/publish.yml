@@ -18,8 +18,6 @@ jobs:
     steps:
     - name: Checkout current git repository
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
     - name: Install yarn dependencies
       run: yarn install --immutable
     - name: Use Node.js
@@ -57,7 +55,7 @@ jobs:
     - name: Push changes to current git repository
       uses: ad-m/github-push-action@v0.6.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ github.token }}
         branch: main
     - name: Publish NPM package
       uses: JS-DevTools/npm-publish@v1
@@ -65,4 +63,4 @@ jobs:
         access: public
         package: ./package.json
         registry: https://npm.pkg.github.com
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ github.token }}
