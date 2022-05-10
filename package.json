@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-parcellab",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "description": "Specific parcelLab configuration for JavaScript and TypeScript projects",
   "main": "index.js",
   "keywords": [
