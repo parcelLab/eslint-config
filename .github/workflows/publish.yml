@@ -47,5 +47,4 @@ jobs:
       with:
         access: public
         package: ./package.json
-        registry: https://npm.pkg.github.com
-        token: ${{ github.token }}
+        token: ${{ secrets.NPM_TOKEN }}
