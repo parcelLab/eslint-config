@@ -1,6 +1,6 @@
-# eslint-config
+# @parcellab/eslint-config
 
-Specific parcelLab configuration for JavaScript and TypeScript projects.
+Specific parcelLab configuration for JavaScript and TypeScript projects. It also includes React and Jest rules.
 
 It applies the `recommended` rules from:
 
