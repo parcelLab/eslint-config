@@ -39,6 +39,7 @@
     "eslint-config-prettier": "^8.5.0"
   },
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 5",
     "eslint": ">= 8",
     "eslint-plugin-import": ">= 2",
     "eslint-plugin-jest": ">= 26",
@@ -51,7 +52,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
-    "postinstall": "yes | yarn husky install"
+    "prepare": "yes | yarn husky install"
   },
   "author": "engineering@parcellab.com",
   "license": "MIT"

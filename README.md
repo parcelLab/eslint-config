@@ -43,7 +43,7 @@ yarn add eslint --save
 # npm
 npm install @parcellab/eslint-config --save-dev
 # yarn
-yarn add @parcellab/eslint-config --save
+yarn add @parcellab/eslint-config --dev
 ```
 
 ### 3. Install required ESLint Plugins
@@ -246,6 +246,12 @@ parserOptions: {
 ```
 
 ## Development
+
+Prepare the hooks (to automatically lint files before commit)
+
+```sh
+yarn prepare
+```
 
 Lint the lint rules
 
