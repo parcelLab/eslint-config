@@ -1,4 +1,4 @@
-# eslint-config-parcellab
+# eslint-config
 
 Specific parcelLab configuration for JavaScript and TypeScript projects.
 
