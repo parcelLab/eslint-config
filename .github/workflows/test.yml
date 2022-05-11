@@ -9,11 +9,8 @@ on:
     paths:
     - "*.js"
   workflow_dispatch:
-env:
-  PACKAGE: eslint-config-parcellab
 jobs:
   test:
-    if: '!contains(github.event.head_commit.message, ''set package.json version'')'
     runs-on: ubuntu-latest
     steps:
     - name: Use Node.js
