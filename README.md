@@ -37,13 +37,13 @@ npm install eslint --save-dev
 yarn add eslint --save
 ```
 
-### 2. Install `eslint-config-parcellab`
+### 2. Install `@parcellab/eslint-config`
 
 ```sh
 # npm
-npm install eslint-config-parcellab --save-dev
+npm install @parcellab/eslint-config --save-dev
 # yarn
-yarn add eslint-config-parcellab --save
+yarn add @parcellab/eslint-config --save
 ```
 
 ### 3. Install required ESLint Plugins
@@ -140,7 +140,7 @@ Configure your ESLint config file to load all rules. All previously defined plug
 ```js
 // .eslintrc.js
 module.exports = {
-  extends: ['parcellab'],
+  extends: ['@parcellab'],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -152,7 +152,7 @@ It will always use the TypeScript configuration of the given root folder to be l
 
 ```js
 module.exports = {
-  extends: ['kirinus'],
+  extends: ['@parcellab'],
   parserOptions: {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
@@ -173,12 +173,12 @@ Examples:
 
 // for .js files
 module.exports = {
-  extends: ['parcellab/javascript'],
+  extends: ['@parcellab/javascript'],
 };
 
 // for .ts files (do not forget to add `parseOptions` pointing to the tsconfig file)
 module.exports = {
-  extends: ['parcellab/typescript'],
+  extends: ['@parcellab/typescript'],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -186,18 +186,18 @@ module.exports = {
 
 // for .jsx files
 module.exports = {
-  extends: ['parcellab/react'],
+  extends: ['@parcellab/react'],
 };
 
 // for test files
 module.exports = {
-  extends: ['parcellab/jest'],
+  extends: ['@parcellab/jest'],
 };
 
 // You can combine multiple extends, like this:
 // for .tsx files
 module.exports = {
-  extends: ['parcellab/react', 'parcellab/typescript'],
+  extends: ['@parcellab/react', '@parcellab/typescript'],
   parserOptions: {
     project: './tsconfig.json',
   },
