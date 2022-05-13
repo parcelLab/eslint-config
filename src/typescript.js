@@ -67,8 +67,8 @@ module.exports = {
         '**/*.test.{j,t}s?(x)',
       ],
       rules: {
-        '@typescript-eslint/no-unsafe-call': 'warn',
-        '@typescript-eslint/no-unsafe-member-access': 'warn',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
         'unicorn/no-array-for-each': 'warn',
       },
     },
