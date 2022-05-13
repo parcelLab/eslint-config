@@ -39,7 +39,7 @@
     "eslint-config-prettier": "^8.5.0"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 5",
+    "@typescript-eslint/eslint-plugin": ">= 5.23.0",
     "eslint": ">= 8",
     "eslint-plugin-import": ">= 2",
     "eslint-plugin-jest": ">= 26",
