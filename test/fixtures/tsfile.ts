@@ -14,4 +14,5 @@ class UserAccount {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const user: User = new UserAccount('Murphy', 1);

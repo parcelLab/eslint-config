@@ -8,26 +8,9 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
     'prettier',
+    'plugin:prettier/recommended',
   ],
   rules: {
     // Define custom parcelLab rules
-    'prettier/prettier': [
-      'error',
-      // Align prettier linting to the eslint rules
-      {
-        singleQuote: true,
-        semi: true,
-        tabWidth: 2,
-        bracketSpacing: true,
-        trailingComma: 'es5',
-        bracketSameLine: false,
-        useTabs: false,
-        endOfLine: 'lf',
-        overrides: [],
-      },
-    ],
-    'arrow-body-style': 'off',
-    'prefer-arrow-callback': 'off',
-    'unicorn/no-array-for-each': 'off',
   },
 };

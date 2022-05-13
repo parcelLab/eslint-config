@@ -46,7 +46,7 @@ Configurations are stored in `./src` and their required plugins.
 | [react](./src/react.js) (extends `base`)                | `*.jsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks`                       |
 | [playwright](./src/playwright.js)                       | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                                         |
 | [storybook](./src/storybook.js)                         | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                                          |
-| [typescript](./src/typescript.js) (extends `base`)      | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`                                                                 |
+| [typescript](./src/typescript.js) (extends `base`)      | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`                                    |
 
 For instance, to lint TypeScript files, the `@parcellab/typescript` config has to be used
 and all the base plugins (`eslint-plugin-import`, `eslint-plugin-prettier`, `eslint-plugin-promise`, `eslint-plugin-unicorn`)
@@ -59,6 +59,7 @@ npm install eslint-plugin-import \
             eslint-plugin-promise \
             eslint-plugin-unicorn \
             @typescript-eslint/eslint-plugin \
+            @typescript-eslint/parser \
             --save-dev
 # yarn
 yarn add eslint-plugin-import \
@@ -66,6 +67,7 @@ yarn add eslint-plugin-import \
          eslint-plugin-promise \
          eslint-plugin-unicorn \
          @typescript-eslint/eslint-plugin \
+         @typescript-eslint/parser \
          --dev
 ```
 
@@ -76,12 +78,12 @@ yarn add eslint-plugin-import \
 
 // for .js files
 module.exports = {
-  extends: ['@parcellab/javascript'], // Or just `@parcellab`
+  extends: ['@parcellab/eslint-config/javascript'], // Or just `@parcellab`
 };
 
 // for .ts and .tsx files (do not forget to add `parseOptions` pointing to the tsconfig file)
 module.exports = {
-  extends: ['@parcellab/typescript'],
+  extends: ['@parcellab/eslint-config/typescript'],
   parserOptions: {
     project: './tsconfig.json',
     // Enable tsconfigRootDir if the tsconfig has to be loaded base on folder (e.g. monorepo)
@@ -91,38 +93,41 @@ module.exports = {
 
 // for .jsx files
 module.exports = {
-  extends: ['@parcellab/react'],
+  extends: ['@parcellab/eslint-config/react'],
 };
 
 // for .tsx files
 module.exports = {
-  extends: ['@parcellab/react-ts'],
+  extends: ['@parcellab/eslint-config/react-ts'],
 };
 
 // for test files
 module.exports = {
-  extends: ['@parcellab/jest'],
+  extends: ['@parcellab/eslint-config/jest'],
 };
 
 // for e2e tests
 module.exports = {
-  extends: ['@parcellab/playwright'],
+  extends: ['@parcellab/eslint-config/playwright'],
 };
 
 // for react testing library tests
 module.exports = {
-  extends: ['@parcellab/react-testing-library'],
+  extends: ['@parcellab/eslint-config/react-testing-library'],
 };
 
 // for storybook files
 module.exports = {
-  extends: ['@parcellab/storybook'],
+  extends: ['@parcellab/eslint-config/storybook'],
 };
 
 // You can combine multiple extends, like this:
 // for .tsx files
 module.exports = {
-  extends: ['@parcellab/react', '@parcellab/typescript'],
+  extends: [
+    '@parcellab/eslint-config/react',
+    '@parcellab/eslint-config/typescript',
+  ],
   parserOptions: {
     project: './tsconfig.json',
   },
