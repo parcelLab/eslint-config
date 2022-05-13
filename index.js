@@ -1,8 +1,4 @@
-module.exports = {
-  extends: [
-    './javascript.js',
-    './jest.js',
-    './react.js',
-    './typescript.js',
-  ].map((path) => require.resolve(path)),
-};
+const { javascript } = require('./src');
+
+// Export javascript as default configuration
+module.exports = javascript;

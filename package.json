@@ -3,6 +3,32 @@
   "version": "0.0.0",
   "description": "Specific parcelLab configuration for JavaScript and TypeScript projects",
   "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js"
+    },
+    "./jest": {
+      "require": "./src/jest.js"
+    },
+    "./playwright": {
+      "require": "./src/playwright.js"
+    },
+    "./react-testing-library": {
+      "require": "./src/react-testing-library.js"
+    },
+    "./react-ts": {
+      "require": "./src/react-ts.js"
+    },
+    "./react": {
+      "require": "./src/react.js"
+    },
+    "./storybook": {
+      "require": "./src/react.js"
+    },
+    "./typescript": {
+      "require": "./src/typescript.js"
+    }
+  },
   "keywords": [
     "eslint",
     "config",
@@ -17,14 +43,18 @@
     "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "child_process": "^1.0.2",
+    "eslint": "^8.15.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.1.5",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-playwright": "^0.9.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-storybook": "^0.5.11",
+    "eslint-plugin-testing-library": "^5.5.0",
     "eslint-plugin-unicorn": "^42.0.0",
-    "eslint": "^8.15.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "prettier": "^2.6.2",
@@ -34,8 +64,8 @@
   },
   "dependencies": {
     "@typescript-eslint/parser": "^5.23.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0"
   },
   "peerDependencies": {
@@ -44,15 +74,50 @@
     "eslint-plugin-import": ">= 2",
     "eslint-plugin-jest": ">= 26",
     "eslint-plugin-jsx-a11y": ">= 6",
+    "eslint-plugin-playwright": ">= 0.9",
+    "eslint-plugin-prettier": ">= 4",
     "eslint-plugin-promise": ">= 6",
     "eslint-plugin-react": ">= 7",
     "eslint-plugin-react-hooks": ">= 4",
-    "eslint-plugin-unicorn": ">= 42"
+    "eslint-plugin-storybook": ">= 0.5",
+    "eslint-plugin-testing-library": ">= 5",
+    "eslint-plugin-unicorn": ">= 42",
+    "prettier": ">= 2"
+  },
+  "peerDependenciesMeta": {
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "eslint-plugin-jest": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-playwright": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-storybook": {
+      "optional": true
+    },
+    "eslint-plugin-testing-library": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    }
+
   },
   "scripts": {
-    "lint": "eslint .",
+    "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo ./.eslintcache",
+    "lint": "eslint --ext .ts,.js",
+    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx --fix",
     "test": "jest",
-    "prepare": "yes | yarn husky install"
+    "prepare": "yes | yarn husky install",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "author": "engineering@parcellab.com",
   "license": "MIT"

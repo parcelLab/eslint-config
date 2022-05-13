@@ -1,5 +1,6 @@
 module.exports = {
-  extends: './index.js',
+  extends: ['./src/typescript.js'],
+  ignorePatterns: ['test/fixtures/*'],
   parserOptions: {
     project: './tsconfig.eslint.json',
   },
