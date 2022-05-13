@@ -21,11 +21,15 @@ async function lintFile(configFile: string, fileToLint: string) {
 
 describe('Validate ESLint configs', () => {
   [
-    ['javascript.js', 'test/fixtures/jsfile.js'],
-    ['typescript.js', 'test/fixtures/tsfile.ts'],
-    ['react.js', 'test/fixtures/reactfile.jsx'],
-    ['react-typescript.js', 'test/fixtures/reactfile.tsx'],
-    ['jest.js', 'test/fixtures/jestfile.test.js'],
+    ['./index.js', 'test/fixtures/jsfile.js'],
+    ['./src/javascript.js', 'test/fixtures/jsfile.js'],
+    ['./src/jest.js', 'test/fixtures/jestfile.test.js'],
+    ['./src/playwright.js', 'test/fixtures/playwright-test.js'],
+    ['./src/react-testing-library.js', 'test/fixtures/react.test.js'],
+    ['./src/react-ts.js', 'test/fixtures/Reactfile.tsx'],
+    ['./src/react.js', 'test/fixtures/Reactfile.jsx'],
+    ['./src/storybook.js', 'test/fixtures/Button.stories.tsx'],
+    ['./src/typescript.js', 'test/fixtures/tsfile.ts'],
   ].forEach(([lintConfigFile, fileToLint]) => {
     it(`load config ${lintConfigFile} in ESLint to validate ${fileToLint}`, async () => {
       const results = await lintFile(lintConfigFile, fileToLint);

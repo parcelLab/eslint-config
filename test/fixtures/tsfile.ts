@@ -1,3 +1,17 @@
-export default function myFakeFunction(): void {
-  console.log('It is truly fake');
+interface User {
+  name: string;
+  id: number;
 }
+
+class UserAccount {
+  name: string;
+
+  id: number;
+
+  constructor(name: string, id: number) {
+    this.name = name;
+    this.id = id;
+  }
+}
+
+const user: User = new UserAccount('Murphy', 1);
