@@ -20,14 +20,14 @@ $ yarn add --dev @parcellab/eslint-config
 ## Usage
 
 In your package, create a `.eslintrc.js` file that extends any of the existing configs.
-If no config is specified, the `javascript` config will be used.
+If no config is specified, the base `javascript` config will be used.
 
 For example:
 
 ```js
 module.exports = {
   extends: [
-    '@parcellab', // This installs the `javascript` configuration
+    '@parcellab', // This installs the base configuration
   ],
 };
 ```
@@ -38,8 +38,7 @@ Configurations are stored in `./src` and their required plugins.
 
 | Config                                                  | Files                             | Plugins                                                                                            |
 | :------------------------------------------------------ | :-------------------------------- | :------------------------------------------------------------------------------------------------- |
-| [base](./src/graphql.js)                                | based on consumer                 | `eslint-plugin-import`, `eslint-plugin-prettier`, `eslint-plugin-promise`, `eslint-plugin-unicorn` |
-| [javascript](./src/javascript.js) (extends `base`)      | all                               |                                                                                                    |
+| [base](./src/graphql.js)                                | all                               | `eslint-plugin-import`, `eslint-plugin-prettier`, `eslint-plugin-promise`, `eslint-plugin-unicorn` |
 | [jest](./src/jest.js)                                   | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                                               |
 | [react-testing-library](./src/react-testing-library.js) | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                                                    |
 | [react-ts](./src/react.js) (extends `typescript`)       | `*.tsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks`                       |
@@ -78,7 +77,7 @@ yarn add eslint-plugin-import \
 
 // for .js files
 module.exports = {
-  extends: ['@parcellab/eslint-config/javascript'], // Or just `@parcellab`
+  extends: ['@parcellab'],
 };
 
 // for .ts and .tsx files (do not forget to add `parseOptions` pointing to the tsconfig file)
@@ -122,11 +121,11 @@ module.exports = {
 };
 
 // You can combine multiple extends, like this:
-// for .tsx files
+// for typescript files and their tests
 module.exports = {
   extends: [
-    '@parcellab/eslint-config/react',
     '@parcellab/eslint-config/typescript',
+    '@parcellab/eslint-config/jest',
   ],
   parserOptions: {
     project: './tsconfig.json',

@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  extends: [require.resolve('./javascript.js')],
+  extends: ['plugin:import/typescript', require.resolve('./base.js')],
   overrides: [
     {
       // For performance run typescript on ts files
@@ -69,7 +69,6 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-unsafe-call': 'warn',
         '@typescript-eslint/no-unsafe-member-access': 'warn',
-        'import/extensions': 'warn',
         'unicorn/no-array-for-each': 'warn',
       },
     },

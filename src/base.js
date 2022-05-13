@@ -1,3 +1,7 @@
+/**
+ * Custom config base for all projects.
+ */
+
 module.exports = {
   env: {
     node: true,
@@ -5,6 +9,8 @@ module.exports = {
   },
   plugins: ['unicorn', 'prettier', 'promise'],
   extends: [
+    'eslint:recommended',
+    'plugin:import/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
     'prettier',

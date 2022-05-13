@@ -3,7 +3,7 @@ import { exec } from 'node:child_process';
 
 function execPromise(command: string) {
   return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
+    exec(command, (error, stdout, _) => {
       if (error) reject(error);
       else resolve(stdout);
     });
@@ -22,7 +22,6 @@ async function lintFile(configFile: string, fileToLint: string) {
 describe('Validate ESLint configs', () => {
   [
     ['./index.js', 'test/fixtures/jsfile.js'],
-    ['./src/javascript.js', 'test/fixtures/jsfile.js'],
     ['./src/jest.js', 'test/fixtures/jestfile.test.js'],
     ['./src/playwright.js', 'test/fixtures/playwright-test.js'],
     ['./src/react-testing-library.js', 'test/fixtures/react.test.js'],

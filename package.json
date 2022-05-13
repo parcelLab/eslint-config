@@ -7,9 +7,6 @@
     ".": {
       "require": "./index.js"
     },
-    "./javascript": {
-      "require": "./src/javascript.js"
-    },
     "./jest": {
       "require": "./src/jest.js"
     },

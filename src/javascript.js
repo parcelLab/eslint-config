@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  extends: ['airbnb-base', require.resolve('./base.js')],
+  extends: [require.resolve('./base.js')],
   rules: {
     // Define custom parcelLab rules
   },
