@@ -1,5 +1,5 @@
 module.exports = {
-  javascript: require('./javascript'),
+  base: require('./base'),
   jest: require('./jest'),
   playwright: require('./playwright'),
   react: require('./react'),

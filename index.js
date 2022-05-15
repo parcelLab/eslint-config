@@ -1,4 +1,4 @@
-const { javascript } = require('./src');
+const { base } = require('./src');
 
 // Export javascript as default configuration
-module.exports = javascript;
+module.exports = base;
