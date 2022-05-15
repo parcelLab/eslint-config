@@ -27,6 +27,7 @@ module.exports = {
       files: [
         '**/{commitlint,jest,webpack}.config.{j,t}s?(x)',
         '**/typedoc.js',
+        '**/.eslintrc.js',
         '**/.stylelintrc.js',
       ],
       rules: {

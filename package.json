@@ -116,7 +116,7 @@
     "lint": "eslint --ext .ts,.js",
     "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx --fix",
     "test": "jest",
-    "prepare": "yes | yarn husky install",
+    "prepare": "husky install",
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "author": "engineering@parcellab.com",
