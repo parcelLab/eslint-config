@@ -19,4 +19,19 @@ module.exports = {
   rules: {
     // Define custom parcelLab rules
   },
+  overrides: [
+    {
+      /**
+       * Relax rules in config files
+       */
+      files: [
+        '**/{commitlint,jest,webpack}.config.{j,t}s?(x)',
+        '**/typedoc.js',
+        '**/.stylelintrc.js',
+      ],
+      rules: {
+        'unicorn/prefer-module': 'off',
+      },
+    },
+  ],
 };
