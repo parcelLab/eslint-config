@@ -80,7 +80,7 @@
     "eslint-plugin-react": ">= 7",
     "eslint-plugin-react-hooks": ">= 4",
     "eslint-plugin-storybook": ">= 0.5",
-    "eslint-plugin-testing-library": ">= 5",
+    "eslint-plugin-testing-library": ">= 5.5.0",
     "eslint-plugin-unicorn": ">= 42",
     "prettier": ">= 2"
   },
