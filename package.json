@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.4.2",
-    "@types/jest": "^27.5.0",
+    "@types/jest": "^27.5.1",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "child_process": "^1.0.2",
     "eslint": "^8.15.0",
