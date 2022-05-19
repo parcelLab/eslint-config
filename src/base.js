@@ -25,7 +25,8 @@ module.exports = {
        * Relax rules in config files
        */
       files: [
-        '**/{commitlint,jest,webpack}.config.{j,t}s?(x)',
+        '**/{commitlint,jest}.config.{j,t}s?(x)',
+        '**/webpack.*.{j,t}s',
         '**/typedoc.js',
         '**/.eslintrc.js',
         '**/.stylelintrc.js',
