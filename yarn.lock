@@ -1038,6 +1038,7 @@ __metadata:
   dependencies:
     "@parcellab/danger-plugin": "npm:^0.0.9"
     "@types/eslint": "npm:^8.4.2"
+    "@types/is-ci": "npm:^3"
     "@types/jest": "npm:^27.5.0"
     "@typescript-eslint/eslint-plugin": "npm:^5.23.0"
     "@typescript-eslint/parser": "npm:^5.23.0"
@@ -1059,6 +1060,7 @@ __metadata:
     eslint-plugin-testing-library: "npm:^5.5.0"
     eslint-plugin-unicorn: "npm:^42.0.0"
     husky: "npm:^8.0.1"
+    is-ci: "npm:^3.0.1"
     jest: "npm:^28.1.0"
     lint-staged: "npm:^12.4.1"
     prettier: "npm:^2.6.2"
@@ -1206,6 +1208,15 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 2785f1a962029597d01799bf96b400b4bedcf5295f379e0c08f2d1faa656fece563ecb655e85d379a61efdd4c99e5da16cce9f591c5a311f3354d86a27dab498
+  languageName: node
+  linkType: hard
+
+"@types/is-ci@npm:^3":
+  version: 3.0.0
+  resolution: "@types/is-ci@npm:3.0.0"
+  dependencies:
+    ci-info: "npm:^3.1.0"
+  checksum: d7f60ca63290ff52cd9c659800224972dffe449d6080a9b35bd01f8c01e7b3bd5aa3e8414f07aa0392a790a9e5cfd627a5339f1959020dc6fdac8f48eb932cb8
   languageName: node
   linkType: hard
 
@@ -2061,6 +2072,13 @@ __metadata:
   version: 2.0.0
   resolution: "chownr@npm:2.0.0"
   checksum: 7b240ff920db951fd3841116c5e0e2ec4750e20c85cd044ea78f636202e1fa47ce0a20d48c3c912edc52ea0f1615aba37bdd6297d3a731b517647ed33c3dee09
+  languageName: node
+  linkType: hard
+
+"ci-info@npm:^3.1.0":
+  version: 3.3.1
+  resolution: "ci-info@npm:3.3.1"
+  checksum: 9797982c92b00c0d148cf237d28f23d7c23d9172c21679745fad38deed1cffe3ffa2cec2badab8f1009a4e01885681da949a2a8d758962878ab31ee3fb832f0b
   languageName: node
   linkType: hard
 
@@ -3986,6 +4004,17 @@ __metadata:
   version: 1.2.4
   resolution: "is-callable@npm:1.2.4"
   checksum: 6db2b77ca8f98d085e3889dc763b1a39420e6a865a04fc422546c00871c00d8cdfa964d5012011fd6de1d06e375270197565b3437404530fd4d2fc521413c1c0
+  languageName: node
+  linkType: hard
+
+"is-ci@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "is-ci@npm:3.0.1"
+  dependencies:
+    ci-info: "npm:^3.2.0"
+  bin:
+    is-ci: bin.js
+  checksum: dd9634df0a62cffa9f0ee2b861539c16cddf00095168a78d758a710dba9597a293c2af08bf410232ef61e9f3605b312ad7d057228e4fb0b4b0f445e5ffd908aa
   languageName: node
   linkType: hard
 
