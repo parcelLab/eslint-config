@@ -125,6 +125,9 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "upgrade": "yarn upgrade-interactive"
   },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
   "author": "engineering@parcellab.com",
   "license": "MIT",
   "packageManager": "yarn@4.0.0-rc.6"
