@@ -1019,16 +1019,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parcellab/danger-plugin@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "@parcellab/danger-plugin@npm:0.0.11"
+"@parcellab/danger-plugin@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@parcellab/danger-plugin@npm:0.0.12"
   dependencies:
     "@commitlint/config-conventional": "npm:^17.0.0"
     "@commitlint/lint": "npm:^17.0.0"
     "@commitlint/types": "npm:^17.0.0"
   peerDependencies:
     danger: ">= 11"
-  checksum: 609d6d0fd9ccc760cb7d68e10b44fc60efaea6cc6934238fb01c8b9cf8db91621f5296445365805424a8b510f7e39600766754c0db0623da02ac15901d0ce05e
+  checksum: 97bd1082cf9ee9f5315ad092802f23782b5c75952a165e0d767ce15a1558b12bf85818a1a82488530045ff0073b34000ff2e11cd0ca1f523567ef4ec0b46d34a
   languageName: node
   linkType: hard
 
@@ -1036,7 +1036,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@parcellab/eslint-config@workspace:."
   dependencies:
-    "@parcellab/danger-plugin": "npm:^0.0.11"
+    "@parcellab/danger-plugin": "npm:^0.0.12"
     "@types/eslint": "npm:^8.4.2"
     "@types/is-ci": "npm:^3.0.0"
     "@types/jest": "npm:^27.5.1"
