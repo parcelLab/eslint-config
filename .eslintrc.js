@@ -5,6 +5,12 @@ module.exports = {
     project: './tsconfig.eslint.json',
   },
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'unicorn/prefer-module': 'off',
   },
 };
