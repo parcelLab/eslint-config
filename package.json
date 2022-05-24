@@ -39,38 +39,44 @@
     "url": "https://github.com/parcelLab/eslint-config.git"
   },
   "devDependencies": {
+    "@parcellab/danger-plugin": "^0.0.10",
     "@types/eslint": "^8.4.2",
-    "@types/jest": "^27.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@types/is-ci": "^3.0.0",
+    "@types/jest": "^27.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
     "child_process": "^1.0.2",
-    "eslint": "^8.15.0",
+    "danger": "^11.0.7",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.2.2",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-playwright": "^0.9.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
-    "eslint-plugin-storybook": "^0.5.11",
+    "eslint-plugin-storybook": "^0.5.12",
     "eslint-plugin-testing-library": "^5.5.0",
     "eslint-plugin-unicorn": "^42.0.0",
     "husky": "^8.0.1",
+    "is-ci": "^3.0.1",
     "jest": "^28.1.0",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.3",
     "ts-jest": "^28.0.2",
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "@typescript-eslint/parser": "^5.23.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-config-airbnb-typescript": "^17.0.0"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">= 5",
-    "eslint": ">= 8",
+    "eslint": ">= 8.16.0",
+    "eslint-config-prettier": ">= 8",
     "eslint-plugin-import": ">= 2",
     "eslint-plugin-jest": ">= 26.2.2",
     "eslint-plugin-jsx-a11y": ">= 6",
@@ -100,25 +106,29 @@
     "eslint-plugin-react": {
       "optional": true
     },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
     "eslint-plugin-storybook": {
       "optional": true
     },
     "eslint-plugin-testing-library": {
       "optional": true
-    },
-    "eslint-plugin-react-hooks": {
-      "optional": true
     }
-
   },
   "scripts": {
     "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo ./.eslintcache",
     "lint": "eslint --ext .ts,.js",
     "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx --fix",
     "test": "jest",
-    "prepare": "husky install",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "prepare": "is-ci || husky install",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "upgrade": "yarn upgrade-interactive"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
   },
   "author": "engineering@parcellab.com",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@4.0.0-rc.6"
 }
