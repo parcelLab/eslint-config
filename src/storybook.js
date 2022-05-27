@@ -15,7 +15,6 @@ module.exports = {
       // Storybook rules are specific to storybook files and extending base.js is not needed as other config will cover them
       extends: ['plugin:storybook/recommended'],
       rules: {
-        // Define custom parcelLab rules
         'unicorn/filename-case': 'off',
       },
     },

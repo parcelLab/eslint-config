@@ -5,7 +5,7 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2022: true,
   },
   settings: {
     react: {
@@ -15,12 +15,14 @@ module.exports = {
   overrides: [
     {
       files: ['*.jsx'],
-      extends: ['airbnb', 'airbnb/hooks', require.resolve('./base.js')],
+      extends: [
+        'airbnb',
+        'airbnb/hooks',
+        require.resolve('./base.js'),
+        'plugin:react/jsx-runtime',
+      ],
       plugins: ['react'],
-      rules: {
-        // Define custom parcelLab rules
-        'unicorn/filename-case': 'off',
-      },
+      rules: {},
     },
   ],
 };

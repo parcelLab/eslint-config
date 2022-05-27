@@ -14,15 +14,11 @@ module.exports = {
       files: ['**/?(*.)+(test).{js,jsx,ts,tsx}'],
       // React testing library rules are specific to tests and extending base.js is not needed as other config will cover them
       extends: ['plugin:testing-library/react'],
-      rules: {
-        // Define custom parcelLab rules
-        'unicorn/filename-case': 'off',
-      },
+      rules: {},
     },
     {
       files: ['**/test-utils.tsx'],
       rules: {
-        // Define custom parcelLab rules
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'import/export': 'off',
       },

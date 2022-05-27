@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  extends: ['plugin:import/typescript', require.resolve('./base.js')],
+  extends: require.resolve('./base.js'),
   overrides: [
     {
       // For performance run typescript on ts files
@@ -15,13 +15,14 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
       extends: [
+        'airbnb',
+        'airbnb-typescript',
         'plugin:import/typescript',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
       rules: {
-        // Define custom parcelLab rules
         '@typescript-eslint/naming-convention': [
           'error',
           { selector: 'default', format: ['camelCase'] },
@@ -40,6 +41,7 @@ module.exports = {
             leadingUnderscore: 'allow',
           },
         ],
+        'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': [
           'error',
           { argsIgnorePattern: '^_+$' },
@@ -63,7 +65,6 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
-        'unicorn/no-array-for-each': 'warn',
       },
     },
   ],

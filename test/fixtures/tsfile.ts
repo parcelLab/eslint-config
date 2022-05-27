@@ -1,12 +1,12 @@
 interface User {
-  name: string;
   id: number;
+  name: string;
 }
 
 class UserAccount {
-  name: string;
-
   id: number;
+
+  name: string;
 
   constructor(name: string, id: number) {
     this.name = name;
@@ -14,5 +14,6 @@ class UserAccount {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const user: User = new UserAccount('Murphy', 1);
+
+export default user;

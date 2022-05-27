@@ -5,25 +5,19 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2022: true,
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  settings: { react: { version: 'detect' } },
   overrides: [
     {
       files: ['*.tsx'],
       extends: [
-        'airbnb',
-        'airbnb-typescript',
         'airbnb/hooks',
         require.resolve('./typescript.js'),
+        'plugin:react/jsx-runtime',
       ],
       plugins: ['react'],
       rules: {
-        // Define custom parcelLab rules
         'react/require-default-props': 'off',
       },
     },
