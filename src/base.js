@@ -18,6 +18,14 @@ module.exports = {
   ],
   rules: {
     // Define custom parcelLab rules
+    'no-param-reassign': ['error', { props: false }],
+    'promise/catch-or-return': ['error', { allowFinally: true }],
+    'unicorn/no-array-for-each': 'off', // conflict with no-restricted-syntax
+    'unicorn/no-null': 'off',
+    'unicorn/prevent-abbreviations': [
+      'error',
+      { allowList: { args: true, env: true, prod: true } },
+    ],
   },
   overrides: [
     {

@@ -24,26 +24,20 @@ module.exports = {
         // Define custom parcelLab rules
         '@typescript-eslint/naming-convention': [
           'error',
-          {
-            selector: 'default',
-            format: ['camelCase'],
-          },
-          {
-            selector: 'enumMember',
-            format: ['PascalCase'],
-          },
+          { selector: 'default', format: ['camelCase'] },
+          { selector: 'enumMember', format: ['PascalCase'] },
+          { selector: 'function', format: ['camelCase', 'PascalCase'] },
           {
             selector: 'parameter',
             format: ['camelCase'],
             leadingUnderscore: 'allowSingleOrDouble',
           },
+          { selector: 'typeLike', format: ['PascalCase'] },
+          { selector: 'variable', format: ['camelCase', 'UPPER_CASE'] },
           {
-            selector: 'typeLike',
-            format: ['PascalCase'],
-          },
-          {
-            selector: 'variable',
-            format: ['camelCase', 'UPPER_CASE'],
+            selector: ['typeProperty', 'objectLiteralProperty'],
+            format: null,
+            leadingUnderscore: 'allow',
           },
         ],
         '@typescript-eslint/no-unused-vars': [

@@ -24,7 +24,7 @@ module.exports = {
       plugins: ['react'],
       rules: {
         // Define custom parcelLab rules
-        'unicorn/filename-case': 'off',
+        'react/require-default-props': 'off',
       },
     },
   ],

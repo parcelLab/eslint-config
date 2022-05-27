@@ -1,7 +1,8 @@
 node_modules
-## Yarn
 package-lock.json
-node_modules/
+temp
+
+## Yarn
 yarn-debug.log*
 yarn-error.log*
 .yarn/*
