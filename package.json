@@ -57,7 +57,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.5.12",
-    "eslint-plugin-testing-library": "^5.5.0",
+    "eslint-plugin-testing-library": "^5.5.1",
     "eslint-plugin-unicorn": "^42.0.0",
     "husky": "^8.0.1",
     "is-ci": "^3.0.1",
@@ -86,7 +86,7 @@
     "eslint-plugin-react": ">= 7",
     "eslint-plugin-react-hooks": ">= 4",
     "eslint-plugin-storybook": ">= 0.5.12",
-    "eslint-plugin-testing-library": ">= 5",
+    "eslint-plugin-testing-library": ">= 5.5.1",
     "eslint-plugin-unicorn": ">= 42",
     "prettier": ">= 2"
   },
