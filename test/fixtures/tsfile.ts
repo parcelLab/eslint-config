@@ -1,15 +1,19 @@
 interface User {
   id: number;
-  name: string;
+  fullName: string;
+}
+
+enum LastName {
+  Murphy = 'Smith',
 }
 
 class UserAccount {
   id: number;
 
-  name: string;
+  fullName: string;
 
   constructor(name: string, id: number) {
-    this.name = name;
+    this.fullName = `${name} ${LastName[name as keyof typeof LastName]}`;
     this.id = id;
   }
 }

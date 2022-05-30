@@ -28,7 +28,7 @@ describe('Validate ESLint configs', () => {
     ['./src/react-testing-library.js', 'test/fixtures/react.test.js'],
     ['./src/react-ts.js', 'test/fixtures/react-file.tsx'],
     ['./src/react.js', 'test/fixtures/react-file.jsx'],
-    ['./src/storybook.js', 'test/fixtures/_button.stories.tsx'],
+    ['./src/storybook.js', 'test/fixtures/button.stories.tsx'],
     ['./src/typescript.js', 'test/fixtures/tsfile.ts'],
   ])(
     'load config %s in ESLint to validate %s',

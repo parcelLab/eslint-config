@@ -13,8 +13,8 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
-    'prettier',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   rules: {
     'no-param-reassign': ['error', { props: false }],
