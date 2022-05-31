@@ -17,7 +17,6 @@ module.exports = {
       extends: ['plugin:jest/recommended'],
       rules: {
         // Define custom parcelLab rules
-        'jest/expect-expect': 'off',
       },
     },
   ],
