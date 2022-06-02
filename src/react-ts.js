@@ -7,6 +7,7 @@ module.exports = {
     browser: true,
     es2022: true,
   },
+  extends: require.resolve('./typescript.js'),
   settings: { react: { version: 'detect' } },
   overrides: [
     {
