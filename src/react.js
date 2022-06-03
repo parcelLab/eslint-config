@@ -7,22 +7,20 @@ module.exports = {
     browser: true,
     es2022: true,
   },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  settings: { react: { version: 'detect' } },
+  extends: require.resolve('./base.js'),
   overrides: [
     {
-      files: ['*.jsx'],
-      extends: [
-        'airbnb',
-        'airbnb/hooks',
-        require.resolve('./base.js'),
-        'plugin:react/jsx-runtime',
-      ],
+      files: ['*.jsx', '*.tsx'],
+      extends: ['airbnb', 'airbnb/hooks', 'plugin:react/jsx-runtime'],
       plugins: ['react'],
       rules: {},
+    },
+    {
+      files: ['*.{test,spec}.{j,t}s?(x)'],
+      rules: {
+        'react/jsx-props-no-spreading': 'off',
+      },
     },
   ],
 };

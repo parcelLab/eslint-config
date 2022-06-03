@@ -15,9 +15,7 @@ module.exports = {
       plugins: ['jest'],
       // Jest rules are specific to jest tests and extending base.js is not needed as other config will cover them
       extends: ['plugin:jest/recommended'],
-      rules: {
-        'react/jsx-props-no-spreading': 'off',
-      },
+      rules: {},
     },
   ],
 };

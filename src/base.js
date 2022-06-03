@@ -9,12 +9,13 @@ module.exports = {
   },
   plugins: ['unicorn', 'prettier', 'promise'],
   extends: [
+    'airbnb/base',
     'eslint:recommended',
     'plugin:import/recommended',
     'plugin:promise/recommended',
     'plugin:unicorn/recommended',
-    'plugin:prettier/recommended',
     'prettier',
+    'plugin:prettier/recommended',
   ],
   rules: {
     'no-param-reassign': ['error', { props: false }],

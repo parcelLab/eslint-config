@@ -5,7 +5,7 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2022: true,
     node: true,
   },
   overrides: [

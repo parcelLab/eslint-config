@@ -3,21 +3,11 @@
  */
 
 module.exports = {
-  env: {
-    browser: true,
-    es2022: true,
-  },
-  extends: require.resolve('./typescript.js'),
-  settings: { react: { version: 'detect' } },
+  extends: [require.resolve('./react.js'), require.resolve('./typescript.js')],
   overrides: [
     {
       files: ['*.tsx'],
-      extends: [
-        'airbnb/hooks',
-        require.resolve('./typescript.js'),
-        'plugin:react/jsx-runtime',
-      ],
-      plugins: ['react'],
+      extends: ['airbnb-typescript', 'prettier'],
       rules: {
         'react/require-default-props': 'off',
       },
