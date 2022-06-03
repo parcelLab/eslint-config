@@ -25,6 +25,37 @@ module.exports = {
       rules: {
         // Define custom parcelLab rules
         'unicorn/filename-case': 'off',
+        'react/function-component-definition': [
+          2,
+          { namedComponents: 'arrow-function' },
+        ],
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: 'default',
+            format: ['camelCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'parameter',
+            format: ['camelCase', 'PascalCase'],
+          },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'function',
+            format: ['camelCase', 'PascalCase'],
+          },
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+        ],
       },
     },
   ],
