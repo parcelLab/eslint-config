@@ -20,6 +20,10 @@ module.exports = {
       files: ['*.{test,spec}.{j,t}s?(x)'],
       rules: {
         'react/jsx-props-no-spreading': 'off',
+        'react/function-component-definition': [
+          'error',
+          { namedComponents: 'arrow-function' },
+        ],
       },
     },
   ],

@@ -32,10 +32,14 @@ module.exports = {
           {
             selector: 'parameter',
             format: ['camelCase'],
-            leadingUnderscore: 'allowSingleOrDouble',
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
           },
           { selector: 'typeLike', format: ['PascalCase'] },
-          { selector: 'variable', format: ['camelCase', 'UPPER_CASE'] },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+          },
           {
             selector: ['typeProperty', 'objectLiteralProperty'],
             format: null,
