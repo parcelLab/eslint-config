@@ -14,16 +14,18 @@ module.exports = {
       files: ['*.jsx', '*.tsx'],
       extends: ['airbnb', 'airbnb/hooks', 'plugin:react/jsx-runtime'],
       plugins: ['react'],
-      rules: {},
-    },
-    {
-      files: ['*.{test,spec}.{j,t}s?(x)'],
       rules: {
-        'react/jsx-props-no-spreading': 'off',
         'react/function-component-definition': [
           'error',
           { namedComponents: 'arrow-function' },
         ],
+      },
+    },
+    {
+      files: ['*.{test,spec}.{j,t}s?(x)'],
+      rules: {
+        'no-param-reassign': ['error', { props: false }],
+        'react/jsx-props-no-spreading': 'off',
       },
     },
   ],
