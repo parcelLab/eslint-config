@@ -10,6 +10,37 @@ module.exports = {
       extends: ['airbnb-typescript', 'prettier'],
       rules: {
         'react/require-default-props': 'off',
+        'react/function-component-definition': [
+          'error',
+          { namedComponents: 'arrow-function' },
+        ],
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: 'default',
+            format: ['camelCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'parameter',
+            format: ['camelCase', 'PascalCase'],
+          },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+          {
+            selector: 'function',
+            format: ['camelCase', 'PascalCase'],
+          },
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+        ],
       },
     },
   ],
