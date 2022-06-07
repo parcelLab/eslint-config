@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: ['unicorn', 'prettier', 'promise'],
   extends: [
-    'airbnb/base',
     'eslint:recommended',
     'plugin:import/recommended',
     'plugin:promise/recommended',
