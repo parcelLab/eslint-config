@@ -53,11 +53,14 @@ jobs:
         git config --global user.email "${{ env.BOT_EMAIL }}"
         git config --global user.name "${{ env.BOT_NAME }}"
         git commit -m "chore: set version ${{ steps.load_version.outputs.version }} [skip ci]" -a
-    - name: Push changes to current git repository
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
-        branch: main
+    # # TODO - This pipeline fails as it can't bypass checks
+    # # remote: error: GH006: Protected branch update failed for refs/heads/main
+    # # remote: error: Required status check "test" is expected
+    # - name: Push changes to current git repository
+    #   uses: ad-m/github-push-action@v0.6.0
+    #   with:
+    #     github_token: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
+    #     branch: main
     - name: Publish NPM package
       uses: JS-DevTools/npm-publish@v1
       with:
