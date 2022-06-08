@@ -1052,7 +1052,7 @@ __metadata:
   resolution: "@parcellab/eslint-config@workspace:."
   dependencies:
     "@parcellab/danger-plugin": "npm:^0.0.12"
-    "@types/eslint": "npm:^8.4.2"
+    "@types/eslint": "npm:^8.4.3"
     "@types/is-ci": "npm:^3.0.0"
     "@types/jest": "npm:^28.1.1"
     "@typescript-eslint/eslint-plugin": "npm:^5.27.0"
@@ -1200,13 +1200,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^8.4.2":
-  version: 8.4.2
-  resolution: "@types/eslint@npm:8.4.2"
+"@types/eslint@npm:^8.4.3":
+  version: 8.4.3
+  resolution: "@types/eslint@npm:8.4.3"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: 60a3a38bb5c7805e3f983ed14100df18e98fa99a492554d8a4674be13f041dffe9fca8ac76244d82f4a4b42c686a1d2baa78f9cc1ced1cb0d40a26ab1bf2c18a
+  checksum: 250ba7854a735d5e8ccc0e6c63fc753457b5ccf8e0dcc2cac913642f4974f6800618dda49e76d45c664b95055445a80f9f57351b0aba20fea131a81e72a399f9
   languageName: node
   linkType: hard
 
