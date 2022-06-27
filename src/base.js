@@ -18,7 +18,6 @@ module.exports = {
   ],
   rules: {
     'promise/catch-or-return': ['error', { allowFinally: true }],
-    'unicorn/no-array-for-each': 'off', // conflict with no-restricted-syntax
     'unicorn/no-null': 'off',
     'unicorn/prevent-abbreviations': [
       'error',

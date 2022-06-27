@@ -34,11 +34,11 @@ describe('Validate ESLint configs', () => {
     'load config %s in ESLint to validate %s',
     async (lintConfigFile, fileToLint) => {
       const results = await lintFile(lintConfigFile, fileToLint);
-      results.forEach((result) => {
-        result.messages.forEach((message) => {
+      for (const result of results) {
+        for (const message of result.messages) {
           expect(message.severity).toBeLessThanOrEqual(1);
-        });
-      });
+        }
+      }
     },
   );
 });
