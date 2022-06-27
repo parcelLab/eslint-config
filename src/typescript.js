@@ -46,7 +46,6 @@ module.exports = {
             leadingUnderscore: 'allow',
           },
         ],
-        'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': [
           'error',
           { argsIgnorePattern: '^_+$' },
