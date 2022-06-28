@@ -6,7 +6,7 @@ function emptyListMessage() {
   return 'No items';
 }
 
-export function SampleComponent(): JSX.Element {
+export const SampleComponent = (): JSX.Element => {
   const fruits = ['apple', 'banana', 'orange'];
   const listTitles = ['sample'];
 
@@ -31,4 +31,4 @@ export function SampleComponent(): JSX.Element {
       </div>
     </div>
   );
-}
+};
