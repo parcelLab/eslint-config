@@ -6,7 +6,7 @@ module.exports = {
   overrides: [
     {
       env: {
-        es6: true,
+        es2022: true,
         jest: true,
         node: true,
       },
@@ -15,9 +15,7 @@ module.exports = {
       plugins: ['jest'],
       // Jest rules are specific to jest tests and extending base.js is not needed as other config will cover them
       extends: ['plugin:jest/recommended'],
-      rules: {
-        // Define custom parcelLab rules
-      },
+      rules: {},
     },
   ],
 };

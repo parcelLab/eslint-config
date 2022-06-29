@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  extends: ['plugin:import/typescript', require.resolve('./base.js')],
+  extends: require.resolve('./base.js'),
   overrides: [
     {
       // For performance run typescript on ts files
@@ -19,31 +19,30 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'prettier',
       ],
       rules: {
-        // Define custom parcelLab rules
+        'no-param-reassign': ['error', { props: false }],
         '@typescript-eslint/naming-convention': [
           'error',
-          {
-            selector: 'default',
-            format: ['camelCase'],
-          },
-          {
-            selector: 'enumMember',
-            format: ['PascalCase'],
-          },
+          { selector: 'default', format: ['camelCase'] },
+          { selector: 'enumMember', format: ['PascalCase'] },
+          { selector: 'function', format: ['camelCase', 'PascalCase'] },
           {
             selector: 'parameter',
             format: ['camelCase'],
-            leadingUnderscore: 'allowSingleOrDouble',
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
           },
-          {
-            selector: 'typeLike',
-            format: ['PascalCase'],
-          },
+          { selector: 'typeLike', format: ['PascalCase'] },
           {
             selector: 'variable',
-            format: ['camelCase', 'UPPER_CASE'],
+            format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+          },
+          {
+            selector: ['typeProperty', 'objectLiteralProperty'],
+            format: null,
+            leadingUnderscore: 'allow',
           },
         ],
         '@typescript-eslint/no-unused-vars': [
@@ -69,7 +68,6 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
-        'unicorn/no-array-for-each': 'warn',
       },
     },
   ],

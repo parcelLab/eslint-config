@@ -17,7 +17,12 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
-    // Define custom parcelLab rules
+    'promise/catch-or-return': ['error', { allowFinally: true }],
+    'unicorn/no-null': 'off',
+    'unicorn/prevent-abbreviations': [
+      'error',
+      { allowList: { args: true, env: true, prod: true } },
+    ],
   },
   overrides: [
     {
@@ -25,7 +30,8 @@ module.exports = {
        * Relax rules in config files
        */
       files: [
-        '**/{commitlint,jest,webpack}.config.{j,t}s?(x)',
+        '**/{commitlint,jest}.config.{j,t}s?(x)',
+        '**/webpack.*.{j,t}s',
         '**/typedoc.js',
         '**/.eslintrc.js',
         '**/.stylelintrc.js',

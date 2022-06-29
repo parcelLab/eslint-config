@@ -5,7 +5,7 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2022: true,
     node: true,
   },
   overrides: [
@@ -14,10 +14,7 @@ module.exports = {
       files: ['**/*.stories.{ts,tsx,mdx}'],
       // Storybook rules are specific to storybook files and extending base.js is not needed as other config will cover them
       extends: ['plugin:storybook/recommended'],
-      rules: {
-        // Define custom parcelLab rules
-        'unicorn/filename-case': 'off',
-      },
+      rules: {},
     },
   ],
 };

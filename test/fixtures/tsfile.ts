@@ -1,18 +1,23 @@
 interface User {
-  name: string;
   id: number;
+  fullName: string;
+}
+
+enum LastName {
+  Murphy = 'Smith',
 }
 
 class UserAccount {
-  name: string;
-
   id: number;
 
+  fullName: string;
+
   constructor(name: string, id: number) {
-    this.name = name;
+    this.fullName = `${name} ${LastName[name as keyof typeof LastName]}`;
     this.id = id;
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const user: User = new UserAccount('Murphy', 1);
+
+export default user;

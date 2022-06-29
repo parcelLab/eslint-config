@@ -14,29 +14,31 @@ async function lintFile(configFile: string, fileToLint: string) {
   const lintResult = await execPromise(`eslint \
     --format=json \
     --config ${configFile} \
+    --no-ignore \
     ${fileToLint}`);
 
   return JSON.parse(String(lintResult)) as ESLint.LintResult[];
 }
 
 describe('Validate ESLint configs', () => {
-  [
+  test.each([
     ['./index.js', 'test/fixtures/jsfile.js'],
     ['./src/jest.js', 'test/fixtures/jestfile.test.js'],
     ['./src/playwright.js', 'test/fixtures/playwright-test.js'],
     ['./src/react-testing-library.js', 'test/fixtures/react.test.js'],
-    ['./src/react-ts.js', 'test/fixtures/Reactfile.tsx'],
-    ['./src/react.js', 'test/fixtures/Reactfile.jsx'],
-    ['./src/storybook.js', 'test/fixtures/Button.stories.tsx'],
+    ['./src/react-ts.js', 'test/fixtures/react-file.tsx'],
+    ['./src/react.js', 'test/fixtures/react-file.jsx'],
+    ['./src/storybook.js', 'test/fixtures/button.stories.tsx'],
     ['./src/typescript.js', 'test/fixtures/tsfile.ts'],
-  ].forEach(([lintConfigFile, fileToLint]) => {
-    it(`load config ${lintConfigFile} in ESLint to validate ${fileToLint}`, async () => {
+  ])(
+    'load config %s in ESLint to validate %s',
+    async (lintConfigFile, fileToLint) => {
       const results = await lintFile(lintConfigFile, fileToLint);
-      results.forEach((result) => {
-        result.messages.forEach((message) => {
+      for (const result of results) {
+        for (const message of result.messages) {
           expect(message.severity).toBeLessThanOrEqual(1);
-        });
-      });
-    });
-  });
+        }
+      }
+    },
+  );
 });
