@@ -6,11 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: The version to publish
+        description: The version to publish (e.g. 1.0.0)
         required: true
-env:
-  BOT_EMAIL: dev.bot@parcellab.com
-  BOT_NAME: parcellab-dev-bot
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -20,12 +17,10 @@ jobs:
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of REPO_ACCESS_TOKEN_OPEN_SOURCE.
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-    - name: Install yarn dependencies
-      run: yarn install --immutable
     - name: Use Node.js
       uses: actions/setup-node@v2
-      with:
-        node-version: 18.0.0
+    - name: Install npm dependencies
+      run: npm i
     - name: Load version
       id: load_version
       run: |
@@ -43,24 +38,24 @@ jobs:
           VERSION=${CLEAN_TAG//v}
         fi
         echo "::set-output name=version::$VERSION"
+    - name: Run build
+      run: npm run build
     - name: Update package.json version to ${{ steps.load_version.outputs.version }}
-      uses: mikefarah/yq@v4.9.0
+      uses: mikefarah/yq@v4.26.1
       with:
         cmd: |
           yq e '.version = "${{ steps.load_version.outputs.version }}"' -i package.json -j
     - name: Commit new package.json version
       run: |
-        git config --global user.email "${{ env.BOT_EMAIL }}"
-        git config --global user.name "${{ env.BOT_NAME }}"
+        git config --local user.email "dev.bot@parcellab.com"
+        git config --local user.name "parcellab-dev-bot"
         git commit -m "chore: set version ${{ steps.load_version.outputs.version }} [skip ci]" -a
-    # # TODO - This pipeline fails as it can't bypass checks
-    # # remote: error: GH006: Protected branch update failed for refs/heads/main
-    # # remote: error: Required status check "test" is expected
-    # - name: Push changes to current git repository
-    #   uses: ad-m/github-push-action@v0.6.0
-    #   with:
-    #     github_token: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
-    #     branch: main
+    - name: Push changes to current git repository
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
+        branch: main
+        force: true
     - name: Publish NPM package
       uses: JS-DevTools/npm-publish@v1
       with:

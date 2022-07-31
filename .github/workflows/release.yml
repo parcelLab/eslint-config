@@ -1,17 +1,11 @@
 name: Release
 on:
-  push:
-    branches:
-    - main
+  # Directly publish a new release manually
   workflow_dispatch:
 jobs:
   release:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Create release draft
-      uses: darioblanco/release-wizard@main
-      with:
-        draft: true
-        token: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
-        withV: true
-        pushTag: false
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/_release.yaml
+    with:
+      publish: true
+    secrets: inherit
