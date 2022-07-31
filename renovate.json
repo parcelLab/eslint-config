@@ -1,10 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", "group:all", "schedule:weekly"],
+  "assigneesFromCodeOwners": true,
+  "assigneesSampleSize": 1,
   "branchPrefix": "chore/renovate/",
   "commitBodyTable": true,
   "commitMessageAction": "Pin",
-  "commitMessageExtra": "{{#if isMajor}}v{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}",
   "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
@@ -17,5 +18,10 @@
   "prHourlyLimit": 1,
   "rangeStrategy": "bump",
   "semanticCommits": "enabled",
-  "semanticCommitScope": "{{parentDir}}"
+  "semanticCommitScope": "{{parentDir}}",
+  "semanticCommitType": "chore",
+  "separateMinorPatch": true,
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  }
 }
