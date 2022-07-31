@@ -122,8 +122,7 @@
     "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx --fix",
     "test": "jest",
     "prepare": "is-ci || husky install",
-    "typecheck": "tsc --project tsconfig.json --noEmit",
-    "upgrade": "yarn upgrade-interactive"
+    "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "lint-staged": {
     "*.ts": "eslint --fix"
