@@ -4,7 +4,7 @@ interface User {
 }
 
 enum LastName {
-  Murphy = 'Smith',
+  Murphy = "Smith",
 }
 
 class UserAccount {
@@ -18,6 +18,6 @@ class UserAccount {
   }
 }
 
-const user: User = new UserAccount('Murphy', 1);
+const user: User = new UserAccount("Murphy", 1);
 
 export default user;

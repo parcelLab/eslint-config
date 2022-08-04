@@ -11,16 +11,16 @@ module.exports = {
   overrides: [
     {
       // For performance enable react-testing-library only on test files
-      files: ['**/?(*.)+(test).{js,jsx,ts,tsx}'],
+      files: ["**/?(*.)+(test).{js,jsx,ts,tsx}"],
       // React testing library rules are specific to tests and extending base.js is not needed as other config will cover them
-      extends: ['plugin:testing-library/react'],
+      extends: ["plugin:testing-library/react"],
       rules: {},
     },
     {
-      files: ['**/test-utils.tsx'],
+      files: ["**/test-utils.tsx"],
       rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        'import/export': 'off',
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "import/export": "off",
       },
     },
   ],

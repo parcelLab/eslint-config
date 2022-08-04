@@ -27,7 +27,7 @@ For example:
 ```js
 module.exports = {
   extends: [
-    '@parcellab', // This installs the typescript configuration
+    "@parcellab", // This installs the typescript configuration
   ],
 };
 ```
@@ -36,25 +36,24 @@ module.exports = {
 
 Configurations are stored in `./src` and their required plugins.
 
-| Config                                                  | Files                             | Plugins                                                                                            |
-| :------------------------------------------------------ | :-------------------------------- | :------------------------------------------------------------------------------------------------- |
-| [base](./src/graphql.js)                                | all                               | `eslint-plugin-import`, `eslint-plugin-prettier`, `eslint-plugin-promise`, `eslint-plugin-unicorn` |
-| [jest](./src/jest.js)                                   | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                                               |
-| [react-testing-library](./src/react-testing-library.js) | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                                                    |
-| [react-ts](./src/react.js) (extends `typescript`)       | `*.tsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks`                       |
-| [react](./src/react.js) (extends `base`)                | `*.jsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks`                       |
-| [playwright](./src/playwright.js)                       | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                                         |
-| [storybook](./src/storybook.js)                         | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                                          |
-| [typescript](./src/typescript.js) (extends `base`)      | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`                                    |
+| Config                                                  | Files                             | Plugins                                                                      |
+| :------------------------------------------------------ | :-------------------------------- | :--------------------------------------------------------------------------- |
+| [base](./src/graphql.js)                                | all                               | `eslint-plugin-import`, `eslint-plugin-promise`, `eslint-plugin-unicorn`     |
+| [jest](./src/jest.js)                                   | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                         |
+| [react-testing-library](./src/react-testing-library.js) | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                              |
+| [react-ts](./src/react.js) (extends `typescript`)       | `*.tsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
+| [react](./src/react.js) (extends `base`)                | `*.jsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
+| [playwright](./src/playwright.js)                       | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                   |
+| [storybook](./src/storybook.js)                         | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                    |
+| [typescript](./src/typescript.js) (extends `base`)      | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`              |
 
 For instance, to lint TypeScript files, the `@parcellab/typescript` config has to be used
-and all the base plugins (`eslint-plugin-import`, `eslint-plugin-prettier`, `eslint-plugin-promise`, `eslint-plugin-unicorn`)
+and all the base plugins (`eslint-plugin-import`, `eslint-plugin-promise`, `eslint-plugin-unicorn`)
 and the typescript plugin (`@typescript-eslint/eslint-plugin`) has to be installed as development dependencies:
 
 ```sh
 # npm
 npm install eslint-plugin-import \
-            eslint-plugin-prettier \
             eslint-plugin-promise \
             eslint-plugin-unicorn \
             @typescript-eslint/eslint-plugin \
@@ -62,7 +61,6 @@ npm install eslint-plugin-import \
             --save-dev
 # yarn
 yarn add eslint-plugin-import \
-         eslint-plugin-prettier \
          eslint-plugin-promise \
          eslint-plugin-unicorn \
          @typescript-eslint/eslint-plugin \
@@ -77,14 +75,14 @@ yarn add eslint-plugin-import \
 
 // for .js files
 module.exports = {
-  extends: ['@parcellab/base'],
+  extends: ["@parcellab/base"],
 };
 
 // for .ts and .tsx files (do not forget to add `parseOptions` pointing to the tsconfig file)
 module.exports = {
-  extends: ['@parcellab/eslint-config/typescript'],
+  extends: ["@parcellab/eslint-config/typescript"],
   parserOptions: {
-    project: './tsconfig.json',
+    project: "./tsconfig.json",
     // Enable tsconfigRootDir if the tsconfig has to be loaded base on folder (e.g. monorepo)
     // tsconfigRootDir: __dirname,
   },
@@ -92,43 +90,43 @@ module.exports = {
 
 // for .jsx files
 module.exports = {
-  extends: ['@parcellab/eslint-config/react'],
+  extends: ["@parcellab/eslint-config/react"],
 };
 
 // for .tsx files
 module.exports = {
-  extends: ['@parcellab/eslint-config/react-ts'],
+  extends: ["@parcellab/eslint-config/react-ts"],
 };
 
 // for test files
 module.exports = {
-  extends: ['@parcellab/eslint-config/jest'],
+  extends: ["@parcellab/eslint-config/jest"],
 };
 
 // for e2e tests
 module.exports = {
-  extends: ['@parcellab/eslint-config/playwright'],
+  extends: ["@parcellab/eslint-config/playwright"],
 };
 
 // for react testing library tests
 module.exports = {
-  extends: ['@parcellab/eslint-config/react-testing-library'],
+  extends: ["@parcellab/eslint-config/react-testing-library"],
 };
 
 // for storybook files
 module.exports = {
-  extends: ['@parcellab/eslint-config/storybook'],
+  extends: ["@parcellab/eslint-config/storybook"],
 };
 
 // You can combine multiple extends, like this:
 // for typescript files and their tests
 module.exports = {
   extends: [
-    '@parcellab/eslint-config/typescript',
-    '@parcellab/eslint-config/jest',
+    "@parcellab/eslint-config/typescript",
+    "@parcellab/eslint-config/jest",
   ],
   parserOptions: {
-    project: './tsconfig.json',
+    project: "./tsconfig.json",
   },
 };
 ```

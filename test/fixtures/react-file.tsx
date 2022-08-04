@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-const helloWorld = () => 'Hello, World!';
+const helloWorld = () => "Hello, World!";
 export default helloWorld;
 
 function emptyListMessage() {
-  return 'No items';
+  return "No items";
 }
 
 export const SampleComponent = (): JSX.Element => {
-  const fruits = ['apple', 'banana', 'orange'];
-  const listTitles = ['sample'];
+  const fruits = ["apple", "banana", "orange"];
+  const listTitles = ["sample"];
 
   return (
     <div className="container">
@@ -20,7 +20,7 @@ export const SampleComponent = (): JSX.Element => {
                 {fruits.length > 0
                   ? emptyListMessage()
                   : fruits.map((fruit) => (
-                      <li style={{ display: 'list-item' }} key={fruit}>
+                      <li style={{ display: "list-item" }} key={fruit}>
                         {fruit}
                       </li>
                     ))}

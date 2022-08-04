@@ -3,13 +3,13 @@
  */
 
 module.exports = {
-  extends: [require.resolve('./react.js'), require.resolve('./typescript.js')],
+  extends: [require.resolve("./react.js"), require.resolve("./typescript.js")],
   overrides: [
     {
-      files: ['*.tsx'],
-      extends: ['airbnb-typescript', 'prettier'],
+      files: ["*.tsx"],
+      extends: ["airbnb-typescript", "prettier"],
       rules: {
-        'react/require-default-props': 'off',
+        "react/require-default-props": "off",
       },
     },
   ],

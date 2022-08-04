@@ -1,4 +1,4 @@
-import parcellab from '@parcellab/danger-plugin';
+import parcellab from "@parcellab/danger-plugin";
 
 void (async function dangerReport() {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
