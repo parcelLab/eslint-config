@@ -20,14 +20,14 @@ $ yarn add --dev @parcellab/eslint-config
 ## Usage
 
 In your package, create a `.eslintrc.js` file that extends any of the existing configs.
-If no config is specified, the base `javascript` config will be used.
+If no config is specified, the base `typescript` config will be used.
 
 For example:
 
 ```js
 module.exports = {
   extends: [
-    '@parcellab', // This installs the base configuration
+    '@parcellab', // This installs the typescript configuration
   ],
 };
 ```
@@ -77,7 +77,7 @@ yarn add eslint-plugin-import \
 
 // for .js files
 module.exports = {
-  extends: ['@parcellab'],
+  extends: ['@parcellab/base'],
 };
 
 // for .ts and .tsx files (do not forget to add `parseOptions` pointing to the tsconfig file)
@@ -161,20 +161,14 @@ parserOptions: {
 
 ## Development
 
-Prepare the hooks (to automatically lint files before commit)
-
-```sh
-yarn prepare
-```
-
 Lint the lint rules
 
 ```sh
-yarn lint
+npm run lint
 ```
 
 Run the tests
 
 ```sh
-yarn test
+npm t
 ```

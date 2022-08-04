@@ -1,4 +1,4 @@
-const { base } = require('./src');
+const { typescript } = require('./src');
 
-// Export javascript as default configuration
-module.exports = base;
+// Export typescript as default configuration
+module.exports = typescript;

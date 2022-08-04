@@ -4,30 +4,15 @@
   "description": "Specific parcelLab configuration for JavaScript and TypeScript projects",
   "main": "index.js",
   "exports": {
-    ".": {
-      "require": "./index.js"
-    },
-    "./jest": {
-      "require": "./src/jest.js"
-    },
-    "./playwright": {
-      "require": "./src/playwright.js"
-    },
-    "./react-testing-library": {
-      "require": "./src/react-testing-library.js"
-    },
-    "./react-ts": {
-      "require": "./src/react-ts.js"
-    },
-    "./react": {
-      "require": "./src/react.js"
-    },
-    "./storybook": {
-      "require": "./src/react.js"
-    },
-    "./typescript": {
-      "require": "./src/typescript.js"
-    }
+    ".": "./index.js",
+    "./base": "./src/base.js",
+    "./jest": "./src/jest.js",
+    "./playwright": "./src/playwright.js",
+    "./react-testing-library": "./src/react-testing-library.js",
+    "./react-ts": "./src/react-ts.js",
+    "./react": "./src/react.js",
+    "./storybook": "./src/react.js",
+    "./typescript": "./src/typescript.js"
   },
   "keywords": [
     "eslint",
