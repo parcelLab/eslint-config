@@ -12,7 +12,12 @@ module.exports = {
   overrides: [
     {
       files: ["*.jsx", "*.tsx"],
-      extends: ["airbnb", "airbnb/hooks", "plugin:react/jsx-runtime"],
+      extends: [
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:react/jsx-runtime",
+        "prettier",
+      ],
       plugins: ["react"],
       rules: {
         "react/function-component-definition": [
