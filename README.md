@@ -73,13 +73,13 @@ yarn add eslint-plugin-import \
 ### Configuration examples
 
 ```js
-// .eslintrc.js
-
 // minimum configuration, e.g. for .js files
 module.exports = {
   extends: ["@parcellab/eslint-config/base"],
 };
+```
 
+```js
 // for .ts and .tsx files (do not forget to add `parseOptions` pointing to the tsconfig file)
 module.exports = {
   extends: ["@parcellab/eslint-config/typescript"], // or just "@parcellab"
@@ -89,37 +89,51 @@ module.exports = {
     // tsconfigRootDir: __dirname,
   },
 };
+```
 
+```js
 // for .jsx files
 module.exports = {
   extends: ["@parcellab/eslint-config/react"],
 };
+```
 
+```js
 // for .tsx files
 module.exports = {
   extends: ["@parcellab/eslint-config/react-ts"],
 };
+```
 
+```js
 // for test files
 module.exports = {
   extends: ["@parcellab/eslint-config/jest"],
 };
+```
 
+```js
 // for e2e tests
 module.exports = {
   extends: ["@parcellab/eslint-config/playwright"],
 };
+```
 
+```js
 // for react testing library tests
 module.exports = {
   extends: ["@parcellab/eslint-config/react-testing-library"],
 };
+```
 
+```js
 // for storybook files
 module.exports = {
   extends: ["@parcellab/eslint-config/storybook"],
 };
+```
 
+```js
 // You can combine multiple extends, like this:
 // for typescript files and their tests
 module.exports = {
