@@ -1,6 +1,8 @@
 # @parcellab/eslint-config
 
-Specific parcelLab configuration for JavaScript and TypeScript projects. It also includes React and Jest rules.
+Specific parcelLab configuration for JavaScript and TypeScript projects. It also includes React ecosystem and Jest rules.
+
+The philosophy is to use `prettier` for auto formatting code syntactically, therefore this configuration extensively uses `eslint-config-prettier` as defined in [prettier's documentation](https://prettier.io/docs/en/integrating-with-linters.html), disabling some eslint rules that could collide with prettier's. Anything else that prettier can't auto format will be linted by eslint.
 
 ## Features
 
@@ -36,18 +38,18 @@ module.exports = {
 
 Configurations are stored in `./src` and their required plugins.
 
-| Config                                                  | Files                             | Plugins                                                                      |
-| :------------------------------------------------------ | :-------------------------------- | :--------------------------------------------------------------------------- |
-| [base](./src/graphql.js)                                | all                               | `eslint-plugin-import`, `eslint-plugin-promise`, `eslint-plugin-unicorn`     |
-| [jest](./src/jest.js)                                   | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                         |
-| [react-testing-library](./src/react-testing-library.js) | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                              |
-| [react-ts](./src/react.js) (extends `typescript`)       | `*.tsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
-| [react](./src/react.js) (extends `base`)                | `*.jsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
-| [playwright](./src/playwright.js)                       | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                   |
-| [storybook](./src/storybook.js)                         | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                    |
-| [typescript](./src/typescript.js) (extends `base`)      | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`              |
+| Config                                                     | Files                             | Plugins                                                                      |
+| :--------------------------------------------------------- | :-------------------------------- | :--------------------------------------------------------------------------- |
+| [base](./src/base.js)                                      | all                               | `eslint-plugin-import`, `eslint-plugin-promise`, `eslint-plugin-unicorn`     |
+| [jest](./src/jest.js)                                      | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                         |
+| [react-testing-library](./src/react-testing-library.js)    | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                              |
+| [react-ts](./src/react.js) (extends `typescript`)          | `*.tsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
+| [react](./src/react.js) (extends `base`)                   | `*.jsx`                           | `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
+| [playwright](./src/playwright.js)                          | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                   |
+| [storybook](./src/storybook.js)                            | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                    |
+| [typescript](./src/typescript.js) (extends `base`) DEFAULT | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`              |
 
-For instance, to lint TypeScript files, the `@parcellab/typescript` config has to be used
+For instance, to lint TypeScript files (the default), the `@parcellab/typescript` config has to be used
 and all the base plugins (`eslint-plugin-import`, `eslint-plugin-promise`, `eslint-plugin-unicorn`)
 and the typescript plugin (`@typescript-eslint/eslint-plugin`) has to be installed as development dependencies:
 
@@ -73,14 +75,14 @@ yarn add eslint-plugin-import \
 ```js
 // .eslintrc.js
 
-// for .js files
+// minimum configuration, e.g. for .js files
 module.exports = {
-  extends: ["@parcellab/base"],
+  extends: ["@parcellab/eslint-config/base"],
 };
 
 // for .ts and .tsx files (do not forget to add `parseOptions` pointing to the tsconfig file)
 module.exports = {
-  extends: ["@parcellab/eslint-config/typescript"],
+  extends: ["@parcellab/eslint-config/typescript"], // or just "@parcellab"
   parserOptions: {
     project: "./tsconfig.json",
     // Enable tsconfigRootDir if the tsconfig has to be loaded base on folder (e.g. monorepo)
