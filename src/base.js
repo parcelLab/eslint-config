@@ -20,7 +20,7 @@ module.exports = {
     "unicorn/no-null": "off",
     "unicorn/prevent-abbreviations": [
       "error",
-      { allowList: { args: true, env: true, prod: true } },
+      { allowList: { args: true, env: true, err: true, prod: true } },
     ],
   },
   overrides: [
