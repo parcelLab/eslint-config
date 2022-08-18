@@ -37,11 +37,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Github release
-        uses: darioblanco/release-wizard@v1.1.0
+        uses: darioblanco/release-wizard@v2.0.1
         with:
           draft: ${{ inputs.draft }}
           prerelease: ${{ inputs.prerelease }}
           taskPrefix: ${{ inputs.taskPrefix }}
           token: ${{ secrets.REPO_ACCESS_TOKEN_OPEN_SOURCE }}
           templatePath: ${{ inputs.templatePath }}
-          withV: true
