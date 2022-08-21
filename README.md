@@ -1,5 +1,7 @@
 # @parcellab/eslint-config
 
+[![Publish](https://github.com/parcelLab/eslint-config/actions/workflows/publish.yaml/badge.svg)](https://github.com/parcelLab/eslint-config/actions/workflows/publish.yaml) [![Test](https://github.com/parcelLab/eslint-config/actions/workflows/test.yaml/badge.svg)](https://github.com/parcelLab/eslint-config/actions/workflows/test.yaml)
+
 Specific parcelLab configuration for JavaScript and TypeScript projects. It also includes React ecosystem and Jest rules.
 
 The philosophy is to use `prettier` for auto formatting code syntactically, therefore this configuration extensively uses `eslint-config-prettier` as defined in [prettier's documentation](https://prettier.io/docs/en/integrating-with-linters.html), disabling some eslint rules that could collide with prettier's. Anything else that prettier can't auto format will be linted by eslint.
