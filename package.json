@@ -38,6 +38,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.8.5",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-playwright": "^0.10.0",
@@ -61,6 +62,7 @@
     "eslint-config-airbnb": ">= 19",
     "eslint-config-airbnb-typescript": ">= 17",
     "eslint-config-prettier": ">= 8",
+    "eslint-plugin-import": ">= 2",
     "eslint-plugin-jest": ">= 26",
     "eslint-plugin-jsx-a11y": ">= 6",
     "eslint-plugin-playwright": ">= 0.10.0",
@@ -80,6 +82,9 @@
       "optional": true
     },
     "eslint-config-airbnb-typescript": {
+      "optional": true
+    },
+    "eslint-plugin-import": {
       "optional": true
     },
     "eslint-plugin-jest": {
@@ -106,9 +111,9 @@
   },
   "scripts": {
     "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo ./.eslintcache",
-    "lint": "eslint  --ext .ts,.tsx,.js,.jsx && prettier --check .",
+    "lint": " prettier --check . && eslint  --ext .ts,.tsx,.js,.jsx .",
     "lint:commit": "commitlint -x @commitlint/config-conventional --edit",
-    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx --fix && prettier --write .",
+    "lint:fix": "prettier --write . && eslint --ext .ts,.tsx,.js,.jsx --fix .",
     "test": "jest",
     "prepare": "is-ci || husky install",
     "typecheck": "tsc --project tsconfig.json --noEmit"

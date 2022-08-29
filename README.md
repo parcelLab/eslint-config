@@ -40,32 +40,30 @@ module.exports = {
 
 Configurations are stored in `./src` and their required plugins.
 
-| Config                                                        | Files to be linted                | Required configs/plugins                                                                             |
-| :------------------------------------------------------------ | :-------------------------------- | :--------------------------------------------------------------------------------------------------- |
-| [base](./src/base.js)                                         | all                               | `eslint-plugin-promise`, `eslint-plugin-unicorn`                                                     |
-| [jest](./src/jest.js)                                         | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                                                 |
-| [react-testing-library](./src/react-testing-library.js)       | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                                                      |
-| [react-ts](./src/react.js) (extends `react` and `typescript`) | `*.tsx`                           | `eslint-config-airbnb-typescript`                                                                    |
-| [react](./src/react.js) (extends `base`)                      | `*.jsx`                           | `eslint-config-airbnb`, `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
-| [playwright](./src/playwright.js)                             | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                                           |
-| [storybook](./src/storybook.js)                               | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                                            |
-| [typescript](./src/typescript.js) (extends `base`) DEFAULT    | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`                                      |
+| Config                                                        | Files to be linted                | Required configs/plugins                                                                                                     |
+| :------------------------------------------------------------ | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| [base](./src/base.js)                                         | all                               | `eslint-plugin-promise`, `eslint-plugin-unicorn`                                                                             |
+| [jest](./src/jest.js)                                         | `*.{test,spec}.{j,t}s?(x)`        | `eslint-plugin-jest`                                                                                                         |
+| [react-testing-library](./src/react-testing-library.js)       | `**/?(*.)+(test).{js,jsx,ts,tsx}` | `eslint-plugin-testing-library`                                                                                              |
+| [react-ts](./src/react.js) (extends `react` and `typescript`) | `*.tsx`                           | `eslint-config-airbnb-typescript`                                                                                            |
+| [react](./src/react.js) (extends `base`)                      | `*.jsx`                           | `eslint-config-airbnb`, `eslint-plugin-import`, `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
+| [playwright](./src/playwright.js)                             | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                                                                   |
+| [storybook](./src/storybook.js)                               | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                                                                    |
+| [typescript](./src/typescript.js) (extends `base`) DEFAULT    | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`                                                              |
 
 For instance, to lint TypeScript files (the default), the `@parcellab/typescript` config has to be used
-and all the base plugins (`eslint-plugin-import`, `eslint-plugin-promise`, `eslint-plugin-unicorn`)
+and all the base plugins (`eslint-plugin-promise`, `eslint-plugin-unicorn`)
 and the typescript plugin (`@typescript-eslint/eslint-plugin`) has to be installed as development dependencies:
 
 ```sh
 # npm
-npm install eslint-plugin-import \
-            eslint-plugin-promise \
+npm install eslint-plugin-promise \
             eslint-plugin-unicorn \
             @typescript-eslint/eslint-plugin \
             @typescript-eslint/parser \
             --save-dev
 # yarn
-yarn add eslint-plugin-import \
-         eslint-plugin-promise \
+yarn add eslint-plugin-promise \
          eslint-plugin-unicorn \
          @typescript-eslint/eslint-plugin \
          @typescript-eslint/parser \
