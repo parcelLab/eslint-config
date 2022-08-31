@@ -54,6 +54,9 @@ module.exports = {
           { allowAny: true },
         ],
       },
+      settings: {
+        "import/resolver": { typescript: {} },
+      },
     },
     {
       /**

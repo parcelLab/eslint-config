@@ -49,7 +49,7 @@ Configurations are stored in `./src` and their required plugins.
 | [react](./src/react.js) (extends `base`)                      | `*.jsx`                           | `eslint-config-airbnb`, `eslint-plugin-import`, `eslint-plugin-jsx-a11y`, `eslint-plugin-react`, `eslint-plugin-react-hooks` |
 | [playwright](./src/playwright.js)                             | `**/e2e/**/*.test.{js,ts}`        | `eslint-plugin-playwright`                                                                                                   |
 | [storybook](./src/storybook.js)                               | `*.stories.{ts,tsx,mdx}`          | `eslint-plugin-storybook`                                                                                                    |
-| [typescript](./src/typescript.js) (extends `base`) DEFAULT    | `*.{ts,tsx}`                      | `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`                                                              |
+| [typescript](./src/typescript.js) (extends `base`) DEFAULT    | `*.{ts,tsx}`                      | `eslint-plugin-import`, `eslint-import-resolver-typescript`, `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser` |
 
 For instance, to lint TypeScript files (the default), the `@parcellab/typescript` config has to be used
 and all the base plugins (`eslint-plugin-promise`, `eslint-plugin-unicorn`)
@@ -57,13 +57,17 @@ and the typescript plugin (`@typescript-eslint/eslint-plugin`) has to be install
 
 ```sh
 # npm
-npm install eslint-plugin-promise \
+npm install eslint-plugin-import \
+            eslint-import-resolver-typescript \
+            eslint-plugin-promise \
             eslint-plugin-unicorn \
             @typescript-eslint/eslint-plugin \
             @typescript-eslint/parser \
             --save-dev
 # yarn
-yarn add eslint-plugin-promise \
+yarn add eslint-plugin-import \
+         eslint-import-resolver-typescript \
+         eslint-plugin-promise \
          eslint-plugin-unicorn \
          @typescript-eslint/eslint-plugin \
          @typescript-eslint/parser \
