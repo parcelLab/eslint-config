@@ -6,5 +6,7 @@ module.exports = {
   },
   rules: {
     "unicorn/prefer-module": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/prefer-number-properties": "off"
   },
 };
