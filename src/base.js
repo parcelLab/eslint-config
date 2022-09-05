@@ -19,6 +19,8 @@ module.exports = {
     "promise/catch-or-return": ["error", { allowFinally: true }],
     "unicorn/no-array-for-each": "off",
     "unicorn/no-null": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/prefer-number-properties": "off",
     "unicorn/numeric-separators-style": "off",
     "unicorn/prevent-abbreviations": [
       "error",
