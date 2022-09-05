@@ -22,6 +22,8 @@ module.exports = {
     "unicorn/prefer-spread": "off",
     "unicorn/prefer-number-properties": "off",
     "unicorn/numeric-separators-style": "off",
+    "unicorn/no-await-expression-member": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "unicorn/prevent-abbreviations": [
       "error",
       {
