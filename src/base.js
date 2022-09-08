@@ -23,6 +23,7 @@ module.exports = {
     "unicorn/prefer-number-properties": "off",
     "unicorn/numeric-separators-style": "off",
     "unicorn/no-await-expression-member": "off",
+    "unicorn/no-empty-file": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "unicorn/prevent-abbreviations": [
       "error",
