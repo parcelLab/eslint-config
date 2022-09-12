@@ -53,6 +53,10 @@ module.exports = {
           "error",
           { allowAny: true },
         ],
+        "@typescript-eslint/no-explicit-any": [
+          "error",
+          { ignoreRestArgs: true },
+        ],
       },
       settings: {
         "import/resolver": { typescript: {} },
