@@ -34,44 +34,36 @@ module.exports = {
           addr: { address: true },
           alloc: { allocation: true },
           alt: { alternative: true },
-          app: { application: true },
           apiRes: { apiResponse: true },
-          auth: { authentication: true },
           avg: { average: true },
           bg: { background: true },
           bin: { binary: true },
           buf: { buffer: true },
-          char: { character: true },
           calc: { calculation: true },
           cert: { certificate: true },
           cfg: { configuration: true },
           ch: { channel: true },
-          cmd: { command: true },
+          char: { character: true },
           cmp: { compare: true },
           cnt: { counter: true },
           col: { column: true },
           coord: { coordinate: true },
           ctrl: { control: true },
           diff: { difference: true },
-          expr: { expression: true },
           fmt: { format: true },
           gen: { generate: true },
           hdr: { header: true },
           hw: { hardware: true },
-          id: { identifier: true },
           img: { image: true },
           info: { information: true },
           init: { initialization: true },
           k: { key: true },
           lang: { language: true },
           lat: { latitude: true },
-          lib: { library: true },
           lon: { longitude: true },
           math: { mathematics: true },
-          max: { maximum: true },
           mem: { memory: true },
           mid: { middle: true },
-          min: { minimum: true },
           misc: { miscellaneous: true },
           net: { network: true },
           op: { operation: true },
@@ -86,11 +78,11 @@ module.exports = {
           rand: { random: true },
           recv: { receive: true },
           rng: { range: true },
-          sem: { semaphore: true },
           sel: { selection: true },
+          sem: { semaphore: true },
           seq: { sequence: true },
-          stat: { statistic: true },
           sqrt: { squareRoot: true },
+          stat: { statistic: true },
           ts: { timestamp: true },
         },
         allowList: {
@@ -132,9 +124,9 @@ module.exports = {
           num: true, // number
           obj: true, // object
           opts: true, // options
-          pkg: true, // package
           param: true, // parameter
           params: true, // parameters
+          pkg: true, // package
           prev: true, // previous
           prod: true, // production
           prop: true, // property
