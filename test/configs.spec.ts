@@ -1,23 +1,18 @@
 import { ESLint } from "eslint";
 import { exec } from "node:child_process";
-
-function execPromise(command: string) {
-  return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, _) => {
-      if (error) reject(error);
-      else resolve(stdout);
-    });
-  });
-}
+import { promisify } from "node:util";
 
 async function lintFile(configFile: string, fileToLint: string) {
-  const lintResult = await execPromise(`eslint \
+  const eslintCommand = `eslint \
     --format=json \
     --config ${configFile} \
     --no-ignore \
-    ${fileToLint}`);
+    ${fileToLint}`;
 
-  return JSON.parse(String(lintResult)) as ESLint.LintResult[];
+  const execPromisified = promisify(exec);
+  const lintResult = await execPromisified(eslintCommand);
+
+  return JSON.parse(String(lintResult.stdout)) as ESLint.LintResult[];
 }
 
 describe("Validate ESLint configs", () => {
