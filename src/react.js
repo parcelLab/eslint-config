@@ -20,9 +20,10 @@ module.exports = {
       ],
       plugins: ["react"],
       rules: {
+        "no-console": ["error", { allow: ["warn", "error"] }],
         "react/function-component-definition": [
           "error",
-          { namedComponents: "arrow-function" },
+          { namedComponents: "function-declaration" },
         ],
         "no-restricted-syntax": [
           "error",
