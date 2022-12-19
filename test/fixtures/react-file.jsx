@@ -5,7 +5,7 @@ function emptyListMessage() {
   return "No items";
 }
 
-export const SampleComponent = () => {
+export function SampleComponent() {
   const fruits = ["apple", "banana", "orange"];
   const listTitles = ["sample"];
 
@@ -30,4 +30,4 @@ export const SampleComponent = () => {
       </div>
     </div>
   );
-};
+}
