@@ -30,6 +30,7 @@ module.exports = {
         extendDefaultReplacements: true,
         // Extends the default list: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/rules/shared/abbreviations.js
         replacements: {
+          args: false,
           abs: { absolute: true },
           addr: { address: true },
           alloc: { allocation: true },
@@ -73,6 +74,7 @@ module.exports = {
           pref: { preference: true },
           proc: { process: true },
           prof: { profiler: true },
+          props: false,
           ptr: { pointer: true },
           px: { pixel: true },
           rand: { random: true },
