@@ -24,7 +24,7 @@
     "url": "https://github.com/parcelLab/eslint-config.git"
   },
   "dependencies": {
-    "eslint-plugin-no-require-assign": "file:modules/no-require-assign"
+    "@parcellab/eslint-plugin-no-require-assign": "^0.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "17.3.0",

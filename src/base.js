@@ -7,7 +7,7 @@ module.exports = {
     node: true,
     es2022: true,
   },
-  plugins: ["unicorn", "promise", "no-require-assign"],
+  plugins: ["unicorn", "promise", "@parcellab/eslint-plugin-no-require-assign"],
   extends: [
     "eslint:recommended",
     "plugin:import/recommended",
