@@ -25,7 +25,7 @@ module.exports = {
     "unicorn/no-await-expression-member": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "unicorn/prevent-abbreviations": [
-      "error",
+      "warn",
       {
         extendDefaultReplacements: true,
         // Extends the default list: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/rules/shared/abbreviations.js
