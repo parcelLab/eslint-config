@@ -24,8 +24,9 @@ module.exports = {
     "unicorn/numeric-separators-style": "off",
     "unicorn/no-await-expression-member": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "unicorn/import-style": "off",
     "unicorn/prevent-abbreviations": [
-      "error",
+      "off",
       {
         extendDefaultReplacements: true,
         // Extends the default list: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/rules/shared/abbreviations.js
