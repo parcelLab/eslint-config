@@ -17,14 +17,20 @@ module.exports = {
   ],
   rules: {
     "promise/catch-or-return": ["error", { allowFinally: true }],
-    "unicorn/no-array-for-each": "off",
-    "unicorn/no-null": "off",
-    "unicorn/prefer-spread": "off",
-    "unicorn/prefer-number-properties": "off",
-    "unicorn/numeric-separators-style": "off",
-    "unicorn/no-await-expression-member": "off",
+    "unicorn/catch-error-name": [
+      "error",
+      {
+        ignore: ["^error\\d*$", "^err\\d*$"],
+      },
+    ],
     "@typescript-eslint/ban-ts-comment": "off",
     "unicorn/import-style": "off",
+    "unicorn/no-array-for-each": "off",
+    "unicorn/no-await-expression-member": "off",
+    "unicorn/no-null": "off",
+    "unicorn/numeric-separators-style": "off",
+    "unicorn/prefer-number-properties": "off",
+    "unicorn/prefer-spread": "off",
     "unicorn/prevent-abbreviations": [
       "off",
       {
