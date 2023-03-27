@@ -183,5 +183,11 @@ module.exports = {
         "unicorn/prefer-module": "off",
       },
     },
+    {
+      /**
+       * Include other file extensions other than the .js
+       */
+      files: ["**/*.cjs"],
+    },
   ],
 };
