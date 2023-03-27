@@ -185,7 +185,7 @@ module.exports = {
     },
     {
       /**
-       * Include other file extensions other than the default ones
+       * Include other file extensions other than the .js
        */
       files: ["**/*.cjs"],
     },
