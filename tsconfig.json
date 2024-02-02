@@ -4,5 +4,5 @@
     "module": "commonjs",
     "strict": true
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts"]
 }
