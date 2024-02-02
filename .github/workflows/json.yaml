@@ -10,18 +10,18 @@ on:
       - "**.json"
   workflow_dispatch:
 jobs:
-#  lint:
-#    uses: parcelLab/ci/.github/workflows/json.yaml@v1.7.0
-  json:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout current git repository
-        uses: actions/checkout@v3
-      - name: show before linting
-        run: cat tsconfig.json
-      - name: Lint JSON
-        uses: actionsx/prettier@v3
-        with:
-          args: --write "**.json"
-      - name: show after linting
-        run: cat tsconfig.json
+  lint:
+    uses: parcelLab/ci/.github/workflows/json.yaml@v1
+#  json:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout current git repository
+#        uses: actions/checkout@v3
+#      - name: show before linting
+#        run: cat tsconfig.json
+#      - name: Lint JSON
+#        uses: actionsx/prettier@v3
+#        with:
+#          args: --write "**.json"
+#      - name: show after linting
+#        run: cat tsconfig.json
