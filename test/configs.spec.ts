@@ -34,6 +34,6 @@ describe("Validate ESLint configs", () => {
           expect(message.severity).toBeLessThanOrEqual(1);
         }
       }
-    },
+    }
   );
 });
