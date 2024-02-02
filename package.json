@@ -122,7 +122,7 @@
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
+    "*": "prettier --ignore-unknown --write --allow-empty ",
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "author": "engineering@parcellab.com",
