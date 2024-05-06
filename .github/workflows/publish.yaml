@@ -42,7 +42,7 @@ jobs:
           echo "::set-output name=version::$VERSION"
   publish:
     needs: version
-    uses: ./.github/workflows/_npm-publish.yaml
+    uses: ./.github/workflows/_npm_publish.yaml
     with:
       # access: public # For public packages
       # buildBeforePublish: false # For packages that do not require a build step
