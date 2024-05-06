@@ -76,7 +76,7 @@ jobs:
           npm i
           fi
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
       - if: inputs.buildBeforePublishing
         name: Run build
         run: npm run build
