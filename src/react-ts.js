@@ -7,7 +7,7 @@ module.exports = {
   extends: [require.resolve("./react.js"), require.resolve("./typescript.js")],
   overrides: [
     {
-      files: ["*.tsx"],
+      files: ["*.ts?(x)"],
       extends: ["airbnb-typescript", "prettier"],
       rules: {
         "react/require-default-props": "off",

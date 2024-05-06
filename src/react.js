@@ -11,7 +11,7 @@ module.exports = {
   extends: require.resolve("./base.js"),
   overrides: [
     {
-      files: ["*.jsx", "*.tsx"],
+      files: ["*.jsx", "*.ts?(x)"],
       extends: [
         "airbnb",
         "airbnb/hooks",
