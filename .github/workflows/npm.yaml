@@ -39,5 +39,5 @@ jobs:
       buildBeforePublish: false
       version: ${{ needs.version.outputs.version }}
     secrets:
-      githubAuthToken: ${{ secrets.REPO_ACCESS_TOKEN }}
+      githubAuthToken: ${{ secrets.NPM_GITHUB_TOKEN }}
       # npmjsAuthToken: ${{ secrets.NPM_TOKEN }}
