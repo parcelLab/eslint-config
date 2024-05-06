@@ -90,6 +90,7 @@ jobs:
           git config --local user.email "${{ inputs.botEmail }}"
           git config --local user.name "${{ inputs.botName }}"
           git commit -m "chore: set version ${{ inputs.version }} [skip ci]" -a
+        continue-on-error: true
       - name: Push changes to current git repository
         uses: ad-m/github-push-action@v0.6.0
         with:
