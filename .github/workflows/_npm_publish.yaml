@@ -67,7 +67,14 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: ${{ inputs.scope }}
       - name: Install npm dependencies
-        run: npm ci
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_GITHUB_TOKEN }}
       - if: inputs.buildBeforePublishing
