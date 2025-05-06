@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-require-imports */
 test("all entry points parse", () => {
   expect(() => require("..")).not.toThrow();
   expect(() => require("../src/base")).not.toThrow();

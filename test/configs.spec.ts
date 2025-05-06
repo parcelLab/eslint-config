@@ -4,13 +4,15 @@ import { promisify } from "node:util";
 
 async function lintFile(configFile: string, fileToLint: string) {
   const eslintCommand = `eslint \
-    --format=json \
     --config ${configFile} \
     --no-ignore \
+    --format=json \
     ${fileToLint}`;
 
   const execPromisified = promisify(exec);
-  const lintResult = await execPromisified(eslintCommand);
+  const lintResult = await execPromisified(
+    eslintCommand.replaceAll(/\s+/g, " "),
+  );
 
   return JSON.parse(String(lintResult.stdout)) as ESLint.LintResult[];
 }

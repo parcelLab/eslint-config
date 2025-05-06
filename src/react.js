@@ -16,7 +16,7 @@ module.exports = {
         "airbnb",
         "airbnb/hooks",
         "plugin:react/jsx-runtime",
-        "prettier",
+        "plugin:prettier/recommended",
       ],
       plugins: ["react"],
       rules: {

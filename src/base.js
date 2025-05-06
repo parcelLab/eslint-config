@@ -13,14 +13,14 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
-    "prettier",
+    "plugin:prettier/recommended",
   ],
   rules: {
     "promise/catch-or-return": ["error", { allowFinally: true }],
     "unicorn/catch-error-name": [
       "error",
       {
-        ignore: ["^error\\d*$", "^err\\d*$"],
+        ignore: [String.raw`^error\d*$`, String.raw`^err\d*$`],
       },
     ],
     "@typescript-eslint/ban-ts-comment": "off",
