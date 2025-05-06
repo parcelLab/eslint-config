@@ -7,8 +7,10 @@ module.exports = {
   overrides: [
     {
       files: ["*.ts?(x)"],
-      extends: ["@kesills/airbnb-typescript", "prettier"],
+      extends: ["@kesills/airbnb-typescript", "plugin:prettier/recommended"],
       rules: {
+        "@stylistic/indent": "off",
+        "@stylistic/quotes": "off",
         "react/require-default-props": "off",
       },
     },

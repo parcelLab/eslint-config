@@ -10,7 +10,9 @@ async function lintFile(configFile: string, fileToLint: string) {
     ${fileToLint}`;
 
   const execPromisified = promisify(exec);
-  const lintResult = await execPromisified(eslintCommand.replaceAll(/\s+/g, " "));
+  const lintResult = await execPromisified(
+    eslintCommand.replaceAll(/\s+/g, " "),
+  );
 
   return JSON.parse(String(lintResult.stdout)) as ESLint.LintResult[];
 }
